@@ -37,9 +37,9 @@ if (empty($name) || empty($email) || empty($serviceType) || empty($message)) {
 }
 
 // Configuration
-$to_email = 'rhplusentreprise@gmail.com';
+$to_email = 'email@gmail.com';
 $from_email = 'noreply@emtaxi.fr'; // Use a domain-based email for Hostinger
-$whatsapp_number = '212762728706'; // Updated to match Contact.tsx
+$whatsapp_number = '212762728706'; // Fixed format (212 + 9 digits)
 $site_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 $logo_url = $site_url . '/logo.png';
 
