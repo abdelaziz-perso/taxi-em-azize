@@ -22,7 +22,7 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 // Validate required fields
-$required = ['name', 'email', 'message'];
+$required = ['name', 'message'];
 foreach ($required as $field) {
     if (empty($data[$field])) {
         http_response_code(400);
@@ -33,13 +33,14 @@ foreach ($required as $field) {
 
 // Sanitize input
 $name = htmlspecialchars(strip_tags($data['name']));
-$email = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
+$email = isset($data['email']) ? filter_var($data['email'], FILTER_SANITIZE_EMAIL) : '';
 $phone = isset($data['phone']) ? htmlspecialchars(strip_tags($data['phone'])) : '';
 $serviceType = isset($data['serviceType']) ? htmlspecialchars(strip_tags($data['serviceType'])) : '';
+$flightNumber = isset($data['flightNumber']) ? htmlspecialchars(strip_tags($data['flightNumber'])) : '';
 $message = htmlspecialchars(strip_tags($data['message']));
 
-// Validate email
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+// Validate email if provided
+if ($email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Adresse email invalide']);
     exit();
@@ -59,6 +60,9 @@ if ($phone) {
 }
 if ($serviceType) {
     $emailBody .= "Type de service: $serviceType\n";
+}
+if ($flightNumber) {
+    $emailBody .= "Numéro de vol: $flightNumber\n";
 }
 $emailBody .= "\nMessage:\n$message\n";
 

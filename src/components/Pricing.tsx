@@ -4,7 +4,7 @@ import './Pricing.css';
 
 const Pricing = () => {
     const { t } = useLanguage();
-    
+
     const pricingPlans = [
         {
             id: 1,
@@ -15,7 +15,6 @@ const Pricing = () => {
             features: [
                 t('pricing.features.driver'),
                 t('pricing.features.flightTracking'),
-                t('pricing.features.water'),
                 t('pricing.features.chargers'),
                 t('pricing.features.passengers3'),
             ],
@@ -32,10 +31,8 @@ const Pricing = () => {
             features: [
                 t('pricing.features.allStandard'),
                 t('pricing.features.wifi'),
-                t('pricing.features.newspapers'),
                 t('pricing.features.privacy'),
-                t('pricing.features.passengers3'),
-                t('pricing.features.priority'),
+                t('pricing.features.passengers3')
             ],
             buttonText: t('pricing.button'),
             highlighted: true,
@@ -51,8 +48,7 @@ const Pricing = () => {
                 t('pricing.features.champagne'),
                 t('pricing.features.audio'),
                 t('pricing.features.lighting'),
-                t('pricing.features.passengers7'),
-                t('pricing.features.redCarpet'),
+                t('pricing.features.passengers7')
             ],
             buttonText: t('pricing.button'),
             highlighted: false,
@@ -117,12 +113,20 @@ const Pricing = () => {
                                     if (contactSection) {
                                         contactSection.scrollIntoView({ behavior: 'smooth' });
                                         // Update URL hash
-                                        window.history.pushState(null, '', `#contact?service=${encodeURIComponent(plan.name)}`);
+                                        // Map pricing plans to new service types
+                                        const serviceMapping: { [key: string]: string } = {
+                                            'Standard': 'Service Taxi',
+                                            'Business': 'Transport Aeroport',
+                                            'Premium': 'Transport Touristique'
+                                        };
+                                        const serviceType = serviceMapping[plan.name] || '';
+
+                                        window.history.pushState(null, '', `#contact?service=${encodeURIComponent(serviceType)}`);
                                         // Trigger service type selection
                                         setTimeout(() => {
                                             const serviceSelect = document.getElementById('serviceType') as HTMLSelectElement;
                                             if (serviceSelect) {
-                                                serviceSelect.value = plan.name;
+                                                serviceSelect.value = serviceType;
                                             }
                                         }, 500);
                                     }

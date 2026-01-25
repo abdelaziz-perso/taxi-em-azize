@@ -35,9 +35,11 @@
 }
 
 .navbar-logo img {
-    height: 70px;
+    height: 100px;
     width: auto;
     transition: transform 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    /* For extra clarity */
 }
 
 
@@ -46,7 +48,7 @@
 }
 
 .navbar-scrolled .navbar-logo img {
-    height: 60px;
+    height: 80px;
 }
 
 /* Navigation Links */
@@ -360,11 +362,11 @@
 
 @media (max-width: 480px) {
     .navbar-logo img {
-        height: 55px;
+        height: 70px;
     }
 
     .navbar-scrolled .navbar-logo img {
-        height: 50px;
+        height: 65px;
     }
 
     .navbar-container {
