@@ -11,6 +11,8 @@ const Contact = () => {
         message: '',
     });
 
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
     useEffect(() => {
         // Check if there's a pre-selected service type from URL hash
         const hash = window.location.hash;
@@ -23,6 +25,37 @@ const Contact = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('submitting');
+
+        try {
+            const response = await fetch('/contact.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus('success');
+                setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
+                // Reset status to idle after 5 seconds
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+                setTimeout(() => setStatus('idle'), 5000);
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
     };
 
 
@@ -71,7 +104,18 @@ const Contact = () => {
                 <div className="contact-content">
                     {/* Left Side - Contact Form */}
                     <div className="contact-form-wrapper">
-                        <form className="contact-form">
+                        <form className="contact-form" onSubmit={handleSubmit}>
+                            {status === 'success' && (
+                                <div className="contact-alert alert-success" data-aos="fade-in">
+                                    ✅ Votre message a été envoyé avec succès ! Nous vous contacterons bientôt.
+                                </div>
+                            )}
+                            {status === 'error' && (
+                                <div className="contact-alert alert-error" data-aos="fade-in">
+                                    ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
+                                </div>
+                            )}
+
                             {/* Name Field */}
                             <div className="form-group">
                                 <label htmlFor="name">Votre Nom *</label>
@@ -83,6 +127,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder="Jean Dupont"
                                     required
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
 
@@ -97,6 +142,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder="jeandupont@exemple.com"
                                     required
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
 
@@ -110,6 +156,7 @@ const Contact = () => {
                                     value={formData.phone}
                                     onChange={handleChange}
                                     placeholder="+212 6XX XX XX XX"
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
 
@@ -122,6 +169,7 @@ const Contact = () => {
                                     value={formData.serviceType}
                                     onChange={handleChange}
                                     required
+                                    disabled={status === 'submitting'}
                                 >
                                     <option value="">Sélectionnez un service</option>
                                     <option value="Standard">Standard - Berline Luxe</option>
@@ -146,14 +194,25 @@ const Contact = () => {
                                     placeholder="Comment pouvons-nous vous aider ?"
                                     rows={5}
                                     required
+                                    disabled={status === 'submitting'}
                                 />
                                 <span className="character-count">{formData.message.length}/500 caractères</span>
                             </div>
 
                             {/* Submit Button */}
-                            <button type="button" className="contact-submit-btn">
-                                <Send size={20} />
-                                <span>Envoyer le Message</span>
+                            <button
+                                type="submit"
+                                className={`contact-submit-btn ${status === 'submitting' ? 'loading' : ''}`}
+                                disabled={status === 'submitting'}
+                            >
+                                {status === 'submitting' ? (
+                                    <div className="loader"></div>
+                                ) : (
+                                    <>
+                                        <Send size={20} />
+                                        <span>Envoyer le Message</span>
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
