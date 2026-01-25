@@ -48,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
     gap: 3rem;
     opacity: 0;
     transform: translateY(30px);

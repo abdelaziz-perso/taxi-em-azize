@@ -13,6 +13,8 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 4rem 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Main Footer Grid */
@@ -473,13 +475,23 @@
 
 @media (max-width: 768px) {
     .footer-content {
+        width: 100%;
+        max-width: 100%;
         padding: 3rem 1.5rem 0;
+        box-sizing: border-box;
     }
 
     .footer-main {
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: 1fr;
         gap: 2.5rem;
         padding-bottom: 2rem;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: 100%;
     }
 
     .footer-bottom-content {
@@ -575,7 +587,20 @@
 
 @media (max-width: 480px) {
     .footer-content {
+        width: 100%;
+        max-width: 100%;
         padding: 2.5rem 1rem 0;
+        box-sizing: border-box;
+    }
+
+    .footer-main {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: 100%;
     }
 
     .footer-main {
