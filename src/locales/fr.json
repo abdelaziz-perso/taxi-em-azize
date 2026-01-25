@@ -1,0 +1,205 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "contact": "Contact",
+    "call": "Appeler"
+  },
+  "hero": {
+    "subtitle": "UN SERVICE SUR MESURE POUR VOS DÉPLACEMENTS",
+    "title": "Mise à disposition de chauffeur",
+    "cta": "JE RÉSERVE MON CHAUFFEUR"
+  },
+  "services": {
+    "label": "NOS SERVICES PREMIUM",
+    "title": "Solutions de Transport",
+    "titleHighlight": "d'Excellence",
+    "subtitle": "Services de chauffeur sur mesure alliant luxe, confort et professionnalisme pour répondre à tous vos besoins de déplacement",
+    "airport": {
+      "title": "Transferts Aéroport",
+      "description": "Service de prise en charge et dépose fiable vers tous les aéroports. Suivi de vol pour une parfaite ponctualité et un voyage sans stress."
+    },
+    "business": {
+      "title": "Professionnel & Entreprise",
+      "description": "Transport professionnel pour dirigeants, réunions et événements corporatifs. Ponctuel, discret et toujours fiable."
+    },
+    "events": {
+      "title": "Événements & Occasions Spéciales",
+      "description": "Rendez vos moments spéciaux inoubliables avec notre service de chauffeur premium pour mariages, célébrations et événements VIP."
+    },
+    "onDemand": {
+      "title": "Service à la Demande",
+      "description": "Service horaire flexible pour visites touristiques, shopping ou destinations multiples. Votre chauffeur personnel à disposition."
+    },
+    "privateDriver": "Chauffeur Privé"
+  },
+  "pricing": {
+    "label": "NOS TARIFS",
+    "title": "Choisissez Votre",
+    "titleHighlight": "Formule Premium",
+    "subtitle": "Tarifs transparents et compétitifs pour tous nos services de transport premium",
+    "standard": {
+      "name": "Standard",
+      "description": "Parfait pour les transferts aéroport et les trajets en ville",
+      "category": "BERLINE LUXE",
+      "vehicle": "Mercedes Classe E, BMW Série 5"
+    },
+    "business": {
+      "name": "Affaires",
+      "badge": "LE PLUS POPULAIRE",
+      "description": "Idéal pour les dirigeants et voyages professionnels",
+      "category": "BERLINE EXECUTIVE",
+      "vehicle": "Mercedes Classe S, BMW Série 7"
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "Luxe ultime pour les occasions spéciales",
+      "category": "VAN / SUV DE LUXE",
+      "vehicle": "Mercedes V-Class, Range Rover"
+    },
+    "features": {
+      "driver": "Chauffeur professionnel",
+      "flightTracking": "Suivi de vol",
+      "water": "Eau minérale offerte",
+      "chargers": "Chargeurs téléphone",
+      "passengers3": "Jusqu'à 3 passagers",
+      "passengers7": "Jusqu'à 7 passagers",
+      "wifi": "Wi-Fi à bord",
+      "newspapers": "Journaux quotidiens",
+      "privacy": "Cloison de confidentialité",
+      "priority": "Réservation prioritaire",
+      "champagne": "Service champagne",
+      "audio": "Système audio premium",
+      "lighting": "Éclairage d'ambiance",
+      "redCarpet": "Service tapis rouge",
+      "allStandard": "Toutes les options Standard",
+      "allBusiness": "Toutes les options Affaires"
+    },
+    "button": "Réserver Maintenant",
+    "customQuote": {
+      "title": "Besoin d'un Devis Personnalisé ?",
+      "description": "Pour les trajets longue distance, forfaits horaires ou événements spéciaux, contactez-nous pour un devis personnalisé adapté à vos besoins.",
+      "button": "Demander un Devis"
+    }
+  },
+  "about": {
+    "label": "À PROPOS DE NOUS",
+    "title": "Votre Partenaire de Confiance",
+    "titleHighlight": "en Transport Premium",
+    "subtitle": "Depuis 2009, EM Taxi Touristique offre des services de transport de luxe au Maroc, alliant excellence, ponctualité et confort.",
+    "fleet": {
+      "title": "Parc Automobile",
+      "description": "Véhicules premium entretenus selon les standards les plus élevés. Mercedes Classe S, Vans executive équipés des dernières technologies."
+    },
+    "team": {
+      "title": "Équipe Expert",
+      "description": "Chauffeurs rigoureusement formés, licenciés et contrôlés. Discrétion, ponctualité et excellence du service garanties."
+    },
+    "stats": {
+      "clients": "Clients Satisfaits",
+      "rating": "Note Moyenne",
+      "experience": "Années d'Expérience",
+      "security": "Sécurité Garantie"
+    },
+    "excellence": {
+      "title": "L'Excellence à",
+      "titleHighlight": "Chaque Trajet",
+      "description": "Depuis 2009, EM TAXI TOURISTIQUE est le choix privilégié pour les services de transport haut de gamme. Nous allions expertise professionnelle et engagement indéfectible pour l'excellence.",
+      "quote": "Que vous voyagiez pour affaires ou pour le plaisir, nous nous engageons à faire de chaque course une expérience fluide et luxueuse.",
+      "badge": "Ans d'Excellence"
+    },
+    "whyChoose": {
+      "title": "Pourquoi Choisir",
+      "titleHighlight": "EM Taxi Touristique",
+      "security": {
+        "title": "Sécurité Avant Tout",
+        "description": "Chauffeurs licenciés, assurés et formés régulièrement. Votre sécurité est notre priorité absolue."
+      },
+      "quality": {
+        "title": "Qualité Premium",
+        "description": "Véhicules impeccables, service professionnel et attention aux détails pour une expérience d'exception."
+      },
+      "reference": {
+        "title": "Référence du Secteur",
+        "description": "Des milliers de clients satisfaits et des avis 5 étoiles constants témoignent de notre excellence."
+      }
+    }
+  },
+  "contact": {
+    "label": "CONTACTEZ-NOUS",
+    "title": "Réservez Votre",
+    "titleHighlight": "Transport Premium",
+    "subtitle": "Remplissez le formulaire ci-dessous et notre équipe vous contactera dans les plus brefs délais",
+    "form": {
+      "name": "Nom complet *",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Adresse Email *",
+      "emailPlaceholder": "jeandupont@exemple.com",
+      "phone": "Numéro de Téléphone",
+      "phonePlaceholder": "+212 6XX XX XX XX",
+      "service": "Type de Service",
+      "servicePlaceholder": "Sélectionnez un service",
+      "serviceOptions": {
+        "standard": "Standard - Berline Luxe",
+        "business": "Affaires - Berline Executive",
+        "premium": "Premium - Van/SUV de Luxe",
+        "airport": "Transfert Aéroport",
+        "businessService": "Professionnel & Entreprise",
+        "events": "Événements & Occasions Spéciales",
+        "onDemand": "Service à la Demande",
+        "other": "Autre"
+      },
+      "message": "Votre Message *",
+      "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+      "characters": "caractères",
+      "send": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi. Veuillez réessayer."
+    },
+    "info": {
+      "phone": {
+        "title": "Téléphone",
+        "subtitle": "L'appel pour réserver"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "subtitle": "L'appel pour réserver"
+      },
+      "email": {
+        "title": "Email",
+        "subtitle": "Cliquez pour envoyer un email"
+      }
+    },
+    "emailCta": {
+      "title": "Contactez-nous par Email",
+      "description": "Envoyez-nous un email et nous vous répondrons dans les plus brefs délais.",
+      "button": "Envoyer un Email"
+    }
+  },
+  "footer": {
+    "description": "Votre partenaire de confiance pour un transport premium et professionnel au Maroc. Excellence, ponctualité et confort depuis 2009.",
+    "quickLinks": "Liens Rapides",
+    "ourServices": "Nos Services",
+    "contactUs": "Contactez-nous",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Horaires",
+    "hoursValue": "24/7 - Service disponible",
+    "paymentMethods": "Moyens de paiement acceptés",
+    "copyright": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "legal": "Mentions légales",
+    "developedBy": "Développé par"
+  },
+  "welcomeAssistant": {
+    "title": "EM Assistant",
+    "online": "En ligne",
+    "message": "Bonjour ! Bienvenue chez EM Taxi Touristique. Je suis votre assistant virtuel. Nous sommes là pour assurer votre confort et votre sécurité lors de tous vos déplacements. Comment puis-je vous aider aujourd'hui ?",
+    "cta": "Demander un trajet"
+  }
+}

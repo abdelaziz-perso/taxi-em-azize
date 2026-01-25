@@ -1,72 +1,77 @@
 import { Check } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import './Pricing.css';
 
 const Pricing = () => {
+    const { t } = useLanguage();
+    
     const pricingPlans = [
         {
             id: 1,
-            name: 'Standard',
-            description: 'Parfait pour les transferts aéroport et les trajets en ville',
-            category: 'BERLINE LUXE',
-            vehicle: 'Mercedes Classe E, BMW Série 5',
+            name: t('pricing.standard.name'),
+            description: t('pricing.standard.description'),
+            category: t('pricing.standard.category'),
+            vehicle: t('pricing.standard.vehicle'),
             features: [
-                'Chauffeur professionnel',
-                'Suivi de vol',
-                'Eau minérale offerte',
-                'Chargeurs téléphone',
-                "Jusqu'à 3 passagers",
+                t('pricing.features.driver'),
+                t('pricing.features.flightTracking'),
+                t('pricing.features.water'),
+                t('pricing.features.chargers'),
+                t('pricing.features.passengers3'),
             ],
-            buttonText: 'Réserver Maintenant',
+            buttonText: t('pricing.button'),
             highlighted: false,
         },
         {
             id: 2,
-            name: 'Affaires',
-            badge: 'LE PLUS POPULAIRE',
-            description: 'Idéal pour les dirigeants et voyages professionnels',
-            category: 'BERLINE EXECUTIVE',
-            vehicle: 'Mercedes Classe S, BMW Série 7',
+            name: t('pricing.business.name'),
+            badge: t('pricing.business.badge'),
+            description: t('pricing.business.description'),
+            category: t('pricing.business.category'),
+            vehicle: t('pricing.business.vehicle'),
             features: [
-                'Toutes les options Standard',
-                'Wi-Fi à bord',
-                'Journaux quotidiens',
-                'Cloison de confidentialité',
-                "Jusqu'à 3 passagers",
-                'Réservation prioritaire',
+                t('pricing.features.allStandard'),
+                t('pricing.features.wifi'),
+                t('pricing.features.newspapers'),
+                t('pricing.features.privacy'),
+                t('pricing.features.passengers3'),
+                t('pricing.features.priority'),
             ],
-            buttonText: 'Réserver Maintenant',
+            buttonText: t('pricing.button'),
             highlighted: true,
         },
         {
             id: 3,
-            name: 'Premium',
-            description: 'Luxe ultime pour les occasions spéciales',
-            category: 'VAN / SUV DE LUXE',
-            vehicle: 'Mercedes V-Class, Range Rover',
+            name: t('pricing.premium.name'),
+            description: t('pricing.premium.description'),
+            category: t('pricing.premium.category'),
+            vehicle: t('pricing.premium.vehicle'),
             features: [
-                'Toutes les options Affaires',
-                'Service champagne',
-                'Système audio premium',
-                "Éclairage d'ambiance",
-                "Jusqu'à 7 passagers",
-                'Service tapis rouge',
+                t('pricing.features.allBusiness'),
+                t('pricing.features.champagne'),
+                t('pricing.features.audio'),
+                t('pricing.features.lighting'),
+                t('pricing.features.passengers7'),
+                t('pricing.features.redCarpet'),
             ],
-            buttonText: 'Réserver Maintenant',
+            buttonText: t('pricing.button'),
             highlighted: false,
         },
     ];
 
     return (
-        <section className="pricing" id="tarifs">
+        <section className="pricing" id="tarifs" aria-label="Nos tarifs et formules premium">
             <div className="pricing-container">
                 {/* Section Header */}
-                <div className="pricing-header">
-                    <p className="pricing-label">TARIFICATION TRANSPARENTE</p>
-                    <h2 className="pricing-title">Choisissez Votre Expérience</h2>
+                <header className="pricing-header">
+                    <p className="pricing-label">{t('pricing.label')}</p>
+                    <h2 className="pricing-title">
+                        {t('pricing.title')} <span className="highlight">{t('pricing.titleHighlight')}</span>
+                    </h2>
                     <p className="pricing-subtitle">
-                        Tous les prix incluent chauffeur professionnel, carburant et péages. Pas de frais cachés.
+                        {t('pricing.subtitle')}
                     </p>
-                </div>
+                </header>
 
                 {/* Pricing Cards */}
                 <div className="pricing-grid">
@@ -132,9 +137,9 @@ const Pricing = () => {
                 {/* Custom Quote Section */}
                 <div className="pricing-custom">
                     <div className="pricing-custom-content">
-                        <h3 className="pricing-custom-title">Besoin d'un Devis Personnalisé ?</h3>
+                        <h3 className="pricing-custom-title">{t('pricing.customQuote.title')}</h3>
                         <p className="pricing-custom-description">
-                            Pour les trajets longue distance, forfaits horaires ou événements spéciaux, contactez-nous pour un devis personnalisé adapté à vos besoins.
+                            {t('pricing.customQuote.description')}
                         </p>
                         <a
                             href="#contact"
@@ -161,7 +166,7 @@ const Pricing = () => {
                                 <rect x="2" y="4" width="20" height="16" rx="2" />
                                 <path d="m2 7 8.97 5.7a1.94 1.94 0 0 0 2.06 0L22 7" />
                             </svg>
-                            Demander un Devis
+                            {t('pricing.customQuote.button')}
                         </a>
                     </div>
                 </div>

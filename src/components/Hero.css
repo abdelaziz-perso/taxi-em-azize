@@ -52,6 +52,7 @@
     opacity: 0;
     transform: translateY(30px);
     transition: all 1s ease;
+    min-height: 400px;
 }
 
 .hero-content-loaded {
@@ -75,6 +76,8 @@
     opacity: 0.9;
     animation: fadeInUp 1s ease 0.3s forwards;
     opacity: 0;
+    word-wrap: break-word;
+    line-height: 1.5;
 }
 
 .hero-title {
@@ -86,6 +89,8 @@
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1s ease 0.5s forwards;
     opacity: 0;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 /* CTA Section */
@@ -93,6 +98,8 @@
     flex-shrink: 0;
     animation: fadeInUp 1s ease 0.7s forwards;
     opacity: 0;
+    display: flex;
+    align-items: center;
 }
 
 .btn-reserve {
@@ -154,30 +161,94 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-content {
+        padding: 0 2rem;
+        gap: 2rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-cta {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+    }
+}
+
 @media (max-width: 968px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
         justify-content: center;
         padding: 0 1.5rem;
+        gap: 2rem;
+        align-items: center;
+        min-height: auto;
     }
 
     .hero-text {
         max-width: 100%;
+        width: 100%;
     }
 
     .hero-title {
         font-size: 3rem;
+        line-height: 1.1;
+        text-align: center;
     }
 
     .hero-subtitle {
         font-size: 0.85rem;
         letter-spacing: 2px;
+        margin-bottom: 1.25rem;
+        text-align: center;
     }
 
     .btn-reserve {
         padding: 1.1rem 2.5rem;
         font-size: 0.95rem;
+        letter-spacing: 1.2px;
+    }
+
+    .hero-cta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        gap: 1.75rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 1.8px;
+        margin-bottom: 1rem;
+    }
+
+    .btn-reserve {
+        padding: 1rem 2.25rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -186,8 +257,18 @@
         min-height: 500px;
     }
 
+    .hero-content {
+        flex-direction: column;
+        display: flex;
+        padding: 0 1.25rem;
+        gap: 1.5rem;
+        text-align: center;
+        align-items: center;
+    }
+
     .hero-title {
         font-size: 2.25rem;
+        line-height: 1.15;
     }
 
     .hero-subtitle {
@@ -200,26 +281,72 @@
         padding: 1rem 2rem;
         font-size: 0.85rem;
         letter-spacing: 1px;
-    }
-
-    .hero-content {
-        padding: 0 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        display: flex;
+        padding: 0 1rem;
+        gap: 1.25rem;
+        text-align: center;
+        align-items: center;
+    }
+
     .hero-title {
         font-size: 1.85rem;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
         font-size: 0.7rem;
+        letter-spacing: 1.2px;
+        margin-bottom: 0.875rem;
     }
 
     .btn-reserve {
         padding: 0.9rem 1.75rem;
         font-size: 0.8rem;
+        letter-spacing: 0.8px;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        display: flex;
+        padding: 0 0.875rem;
+        gap: 1rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.75rem;
+    }
+
+    .btn-reserve {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
     }
 }

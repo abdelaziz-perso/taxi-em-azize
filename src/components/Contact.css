@@ -156,41 +156,26 @@
     margin-top: -0.5rem;
 }
 
-/* Alerts */
-.contact-alert {
-    padding: 1.25rem;
+/* Form Status Messages */
+.form-status {
+    padding: 1rem 1.25rem;
     border-radius: 12px;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     font-size: 0.95rem;
-    animation: fadeIn 0.5s ease;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeInUp 0.3s ease;
 }
 
-.alert-success {
-    background: rgba(76, 175, 80, 0.15);
+.form-status.success {
+    background: rgba(76, 175, 80, 0.2);
+    border: 2px solid rgba(76, 175, 80, 0.5);
     color: #4caf50;
-    border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
-.alert-error {
-    background: rgba(244, 67, 54, 0.15);
+.form-status.error {
+    background: rgba(244, 67, 54, 0.2);
+    border: 2px solid rgba(244, 67, 54, 0.5);
     color: #f44336;
-    border: 1px solid rgba(244, 67, 54, 0.3);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Submit Button */
@@ -244,6 +229,17 @@
 
 .contact-submit-btn:active:not(:disabled) {
     transform: translateY(-1px);
+}
+
+.contact-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-submit-btn:disabled:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
 }
 
 .form-privacy {

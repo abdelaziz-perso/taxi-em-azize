@@ -1,20 +1,23 @@
 import { Car, Users, Award, Shield } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import driverImg from '../assets/driver.jpg';
 import './About.css';
 
 const About = () => {
+    const { t } = useLanguage();
+    
     const features = [
         {
             id: 1,
             icon: Car,
-            title: 'Parc Automobile',
-            description: 'Véhicules premium entretenus selon les standards les plus élevés. Mercedes Classe S, Vans executive équipés des dernières technologies.',
+            title: t('about.fleet.title'),
+            description: t('about.fleet.description'),
         },
         {
             id: 2,
             icon: Users,
-            title: 'Équipe Expert',
-            description: 'Chauffeurs rigoureusement formés, licenciés et contrôlés. Discrétion, ponctualité et excellence du service garanties.',
+            title: t('about.team.title'),
+            description: t('about.team.description'),
         },
     ];
 
@@ -23,45 +26,45 @@ const About = () => {
             id: 1,
             icon: Users,
             value: '10 000+',
-            label: 'Clients Satisfaits',
+            label: t('about.stats.clients'),
         },
         {
             id: 2,
             icon: Award,
             value: '4,9/5',
-            label: 'Note Moyenne',
+            label: t('about.stats.rating'),
         },
         {
             id: 3,
             icon: Award,
             value: '15+',
-            label: "Années d'Expérience",
+            label: t('about.stats.experience'),
         },
         {
             id: 4,
             icon: Shield,
             value: '100%',
-            label: 'Sécurité Garantie',
+            label: t('about.stats.security'),
         },
     ];
 
     return (
-        <section className="about" id="apropos">
+        <section className="about" id="apropos" aria-label="À propos de EM Taxi Touristique">
             <div className="about-container">
                 {/* Section Label */}
-                <p className="about-label">À PROPOS DE EM TAXI TOURISTIQUE</p>
+                <p className="about-label">{t('about.label')}</p>
 
                 {/* Main Content Grid */}
                 <div className="about-content">
                     {/* Left Side - Text Content */}
                     <div className="about-text">
                         <h2 className="about-title">
-                            L'Excellence à <span className="highlight">Chaque Trajet</span>
+                            {t('about.excellence.title')} <span className="highlight">{t('about.excellence.titleHighlight')}</span>
                         </h2>
 
                         <div className="about-description">
                             <p>
-                                Depuis 2009, <strong>EM TAXI TOURISTIQUE</strong> est le choix privilégié pour les services de transport haut de gamme. Nous allions expertise professionnelle et engagement indéfectible pour l'excellence.
+                                {t('about.excellence.description')}
                             </p>
                         </div>
 
@@ -86,17 +89,21 @@ const About = () => {
                         {/* Quote Box */}
                         <div className="about-quote">
                             <p>
-                                Que vous voyagiez pour affaires ou pour le plaisir, <strong>nous nous engageons à faire de chaque course une expérience fluide et luxueuse.</strong>
+                                <strong>{t('about.excellence.quote')}</strong>
                             </p>
                         </div>
                     </div>
 
                     {/* Right Side - Image */}
                     <div className="about-image">
-                        <img src={driverImg} alt="Chauffeur professionnel EM TAXI TOURISTIQUE" />
-                        <div className="about-badge">
+                        <img 
+                            src={driverImg} 
+                            alt="Chauffeur professionnel EM Taxi Touristique - Transport premium au Maroc depuis 2009" 
+                            loading="lazy"
+                        />
+                        <div className="about-badge" aria-label={`15+ ${t('about.excellence.badge')}`}>
                             <div className="about-badge-value">15+</div>
-                            <div className="about-badge-label">Ans d'Excellence</div>
+                            <div className="about-badge-label">{t('about.excellence.badge')}</div>
                         </div>
                     </div>
                 </div>
@@ -104,34 +111,34 @@ const About = () => {
                 {/* Why Choose Section */}
                 <div className="about-why-choose">
                     <h3 className="about-why-title">
-                        Pourquoi Choisir <span className="highlight">EM Taxi Touristique</span>?
+                        {t('about.whyChoose.title')} <span className="highlight">{t('about.whyChoose.titleHighlight')}</span>?
                     </h3>
                     <div className="about-why-grid">
                         <div className="about-why-card">
                             <div className="about-why-icon">
                                 <Shield size={28} />
                             </div>
-                            <h4 className="about-why-card-title">Sécurité Avant Tout</h4>
+                            <h4 className="about-why-card-title">{t('about.whyChoose.security.title')}</h4>
                             <p className="about-why-card-description">
-                                Chauffeurs licenciés, assurés et formés régulièrement. Votre sécurité est notre priorité absolue.
+                                {t('about.whyChoose.security.description')}
                             </p>
                         </div>
                         <div className="about-why-card">
                             <div className="about-why-icon">
                                 <Award size={28} />
                             </div>
-                            <h4 className="about-why-card-title">Qualité Premium</h4>
+                            <h4 className="about-why-card-title">{t('about.whyChoose.quality.title')}</h4>
                             <p className="about-why-card-description">
-                                Véhicules impeccables, service professionnel et attention aux détails pour une expérience d'exception.
+                                {t('about.whyChoose.quality.description')}
                             </p>
                         </div>
                         <div className="about-why-card">
                             <div className="about-why-icon">
                                 <Award size={28} />
                             </div>
-                            <h4 className="about-why-card-title">Référence du Secteur</h4>
+                            <h4 className="about-why-card-title">{t('about.whyChoose.reference.title')}</h4>
                             <p className="about-why-card-description">
-                                Des milliers de clients satisfaits et des avis 5 étoiles constants témoignent de notre excellence.
+                                {t('about.whyChoose.reference.description')}
                             </p>
                         </div>
                     </div>

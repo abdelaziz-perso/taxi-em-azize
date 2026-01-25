@@ -1,4 +1,5 @@
 import { Plane, Briefcase, PartyPopper, Clock } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import avionImg from '../assets/avion.jpg';
 import car1Img from '../assets/car1.jpg';
 import car2Img from '../assets/car2.jpg';
@@ -6,50 +7,52 @@ import car3Img from '../assets/car3.jpg';
 import './Services.css';
 
 const Services = () => {
+    const { t } = useLanguage();
+    
     const services = [
         {
             id: 1,
             icon: Plane,
-            title: 'Transferts Aéroport',
-            description: 'Service de prise en charge et dépose fiable vers tous les aéroports. Suivi de vol pour une parfaite ponctualité et un voyage sans stress.',
+            title: t('services.airport.title'),
+            description: t('services.airport.description'),
             image: avionImg,
         },
         {
             id: 2,
             icon: Briefcase,
-            title: 'Professionnel & Entreprise',
-            description: 'Transport professionnel pour dirigeants, réunions et événements corporatifs. Ponctuel, discret et toujours fiable.',
+            title: t('services.business.title'),
+            description: t('services.business.description'),
             image: car1Img,
         },
         {
             id: 3,
             icon: PartyPopper,
-            title: 'Événements & Occasions Spéciales',
-            description: 'Rendez vos moments spéciaux inoubliables avec notre service de chauffeur premium pour mariages, célébrations et événements VIP.',
+            title: t('services.events.title'),
+            description: t('services.events.description'),
             image: car2Img,
         },
         {
             id: 4,
             icon: Clock,
-            title: 'Service à la Demande',
-            description: 'Service horaire flexible pour visites touristiques, shopping ou destinations multiples. Votre chauffeur personnel à disposition.',
+            title: t('services.onDemand.title'),
+            description: t('services.onDemand.description'),
             image: car3Img,
         },
     ];
 
     return (
-        <section className="services" id="services">
+        <section className="services" id="services" aria-label="Nos services de transport premium">
             <div className="services-container">
                 {/* Section Header */}
-                <div className="services-header" data-aos="fade-up">
-                    <p className="services-label">NOS SERVICES PREMIUM</p>
+                <header className="services-header" data-aos="fade-up">
+                    <p className="services-label">{t('services.label')}</p>
                     <h2 className="services-title">
-                        Solutions de Transport <span className="highlight">d'Excellence</span>
+                        {t('services.title')} <span className="highlight">{t('services.titleHighlight')}</span>
                     </h2>
                     <p className="services-subtitle">
-                        Services de chauffeur sur mesure alliant luxe, confort et professionnalisme pour répondre à tous vos besoins de déplacement
+                        {t('services.subtitle')}
                     </p>
-                </div>
+                </header>
 
                 {/* Services Grid */}
                 <div className="services-grid">
@@ -64,7 +67,11 @@ const Services = () => {
                             >
                                 {/* Background Image */}
                                 <div className="service-card-bg">
-                                    <img src={service.image} alt={service.title} />
+                                    <img 
+                                        src={service.image} 
+                                        alt={`${service.title} - EM Taxi Touristique - ${t('services.subtitle')}`}
+                                        loading="lazy"
+                                    />
                                     <div className="service-card-overlay"></div>
                                 </div>
 

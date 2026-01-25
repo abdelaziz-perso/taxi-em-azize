@@ -1,13 +1,17 @@
 .welcome-assistant {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: -60px;
+    right: 18px;
     z-index: 9998;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 15px;
     pointer-events: none;
+}
+
+.welcome-assistant.hidden {
+    display: none;
 }
 
 .welcome-assistant * {
@@ -251,8 +255,8 @@
 /* Responsive */
 @media (max-width: 480px) {
     .welcome-assistant {
-        bottom: 20px;
-        right: 20px;
+        bottom: -60px;
+        right: 18px;
     }
 
     .assistant-card {

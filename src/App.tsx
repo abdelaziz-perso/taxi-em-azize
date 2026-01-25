@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { LanguageProvider } from './contexts/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -8,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import WelcomeAssistant from './components/WelcomeAssistant'
+import SEO from './components/SEO'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './App.css'
@@ -24,17 +26,20 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <ScrollProgress />
-      <WelcomeAssistant />
-      <Navbar />
-      <Hero />
-      <Services />
-      <Pricing />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <SEO />
+      <div className="app">
+        <ScrollProgress />
+        <WelcomeAssistant />
+        <Navbar />
+        <Hero />
+        <Services />
+        <Pricing />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

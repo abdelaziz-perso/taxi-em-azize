@@ -1,0 +1,205 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "call": "Call"
+  },
+  "hero": {
+    "subtitle": "A CUSTOM SERVICE FOR YOUR TRAVELS",
+    "title": "Chauffeur at your disposal",
+    "cta": "BOOK MY CHAUFFEUR"
+  },
+  "services": {
+    "label": "OUR PREMIUM SERVICES",
+    "title": "Transport Solutions",
+    "titleHighlight": "of Excellence",
+    "subtitle": "Custom chauffeur services combining luxury, comfort and professionalism to meet all your transportation needs",
+    "airport": {
+      "title": "Airport Transfers",
+      "description": "Reliable pickup and drop-off service to all airports. Flight tracking for perfect punctuality and stress-free travel."
+    },
+    "business": {
+      "title": "Business & Corporate",
+      "description": "Professional transportation for executives, meetings and corporate events. Punctual, discreet and always reliable."
+    },
+    "events": {
+      "title": "Events & Special Occasions",
+      "description": "Make your special moments unforgettable with our premium chauffeur service for weddings, celebrations and VIP events."
+    },
+    "onDemand": {
+      "title": "On-Demand Service",
+      "description": "Flexible hourly service for tourist visits, shopping or multiple destinations. Your personal chauffeur at your disposal."
+    },
+    "privateDriver": "Private Chauffeur"
+  },
+  "pricing": {
+    "label": "OUR PRICING",
+    "title": "Choose Your",
+    "titleHighlight": "Premium Package",
+    "subtitle": "Transparent and competitive rates for all our premium transportation services",
+    "standard": {
+      "name": "Standard",
+      "description": "Perfect for airport transfers and city trips",
+      "category": "LUXURY SEDAN",
+      "vehicle": "Mercedes E-Class, BMW 5 Series"
+    },
+    "business": {
+      "name": "Business",
+      "badge": "MOST POPULAR",
+      "description": "Ideal for executives and business travel",
+      "category": "EXECUTIVE SEDAN",
+      "vehicle": "Mercedes S-Class, BMW 7 Series"
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "Ultimate luxury for special occasions",
+      "category": "LUXURY VAN / SUV",
+      "vehicle": "Mercedes V-Class, Range Rover"
+    },
+    "features": {
+      "driver": "Professional driver",
+      "flightTracking": "Flight tracking",
+      "water": "Mineral water provided",
+      "chargers": "Phone chargers",
+      "passengers3": "Up to 3 passengers",
+      "passengers7": "Up to 7 passengers",
+      "wifi": "On-board Wi-Fi",
+      "newspapers": "Daily newspapers",
+      "privacy": "Privacy partition",
+      "priority": "Priority booking",
+      "champagne": "Champagne service",
+      "audio": "Premium audio system",
+      "lighting": "Ambient lighting",
+      "redCarpet": "Red carpet service",
+      "allStandard": "All Standard options",
+      "allBusiness": "All Business options"
+    },
+    "button": "Book Now",
+    "customQuote": {
+      "title": "Need a Custom Quote?",
+      "description": "For long-distance trips, hourly packages or special events, contact us for a personalized quote tailored to your needs.",
+      "button": "Request a Quote"
+    }
+  },
+  "about": {
+    "label": "ABOUT US",
+    "title": "Your Trusted Partner",
+    "titleHighlight": "in Premium Transportation",
+    "subtitle": "Since 2009, EM Taxi Touristique has been offering luxury transportation services in Morocco, combining excellence, punctuality and comfort.",
+    "fleet": {
+      "title": "Fleet",
+      "description": "Premium vehicles maintained to the highest standards. Mercedes S-Class, executive vans equipped with the latest technology."
+    },
+    "team": {
+      "title": "Expert Team",
+      "description": "Rigorously trained, licensed and checked drivers. Discretion, punctuality and service excellence guaranteed."
+    },
+    "stats": {
+      "clients": "Satisfied Clients",
+      "rating": "Average Rating",
+      "experience": "Years of Experience",
+      "security": "Security Guaranteed"
+    },
+    "excellence": {
+      "title": "Excellence in",
+      "titleHighlight": "Every Journey",
+      "description": "Since 2009, EM TAXI TOURISTIQUE has been the preferred choice for high-end transportation services. We combine professional expertise and unwavering commitment to excellence.",
+      "quote": "Whether you're traveling for business or pleasure, we are committed to making every ride a smooth and luxurious experience.",
+      "badge": "Years of Excellence"
+    },
+    "whyChoose": {
+      "title": "Why Choose",
+      "titleHighlight": "EM Taxi Touristique",
+      "security": {
+        "title": "Safety First",
+        "description": "Licensed, insured and regularly trained drivers. Your safety is our absolute priority."
+      },
+      "quality": {
+        "title": "Premium Quality",
+        "description": "Impeccable vehicles, professional service and attention to detail for an exceptional experience."
+      },
+      "reference": {
+        "title": "Industry Reference",
+        "description": "Thousands of satisfied customers and consistent 5-star reviews attest to our excellence."
+      }
+    }
+  },
+  "contact": {
+    "label": "CONTACT US",
+    "title": "Book Your",
+    "titleHighlight": "Premium Transportation",
+    "subtitle": "Fill out the form below and our team will contact you as soon as possible",
+    "form": {
+      "name": "Full Name *",
+      "namePlaceholder": "John Doe",
+      "email": "Email Address *",
+      "emailPlaceholder": "johndoe@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+212 6XX XX XX XX",
+      "service": "Service Type",
+      "servicePlaceholder": "Select a service",
+      "serviceOptions": {
+        "standard": "Standard - Luxury Sedan",
+        "business": "Business - Executive Sedan",
+        "premium": "Premium - Luxury Van/SUV",
+        "airport": "Airport Transfer",
+        "businessService": "Business & Corporate",
+        "events": "Events & Special Occasions",
+        "onDemand": "On-Demand Service",
+        "other": "Other"
+      },
+      "message": "Your Message *",
+      "messagePlaceholder": "How can we help you?",
+      "characters": "characters",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "phone": {
+        "title": "Phone",
+        "subtitle": "Call to book"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "subtitle": "Call to book"
+      },
+      "email": {
+        "title": "Email",
+        "subtitle": "Click to send an email"
+      }
+    },
+    "emailCta": {
+      "title": "Contact us by Email",
+      "description": "Send us an email and we will respond as soon as possible.",
+      "button": "Send an Email"
+    }
+  },
+  "footer": {
+    "description": "Your trusted partner for premium and professional transportation in Morocco. Excellence, punctuality and comfort since 2009.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactUs": "Contact Us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "hoursValue": "24/7 - Service available",
+    "paymentMethods": "Accepted Payment Methods",
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "legal": "Legal Notice",
+    "developedBy": "Developed by"
+  },
+  "welcomeAssistant": {
+    "title": "EM Assistant",
+    "online": "Online",
+    "message": "Hello! Welcome to EM Taxi Touristique. I am your virtual assistant. We are here to ensure your comfort and safety during all your travels. How can I help you today?",
+    "cta": "Request a ride"
+  }
+}
