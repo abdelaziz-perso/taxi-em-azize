@@ -12,11 +12,7 @@ const Contact = () => {
         serviceType: '',
         message: '',
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
-        type: null,
-        message: '',
-    });
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
     useEffect(() => {
         // Check if there's a pre-selected service type from URL hash
@@ -37,31 +33,45 @@ const Contact = () => {
 
         setFormData(prev => ({ ...prev, [name]: value }));
         // Clear status when user starts typing
-        if (submitStatus.type) {
-            setSubmitStatus({ type: null, message: '' });
+        if (status !== 'idle') {
+            setStatus('idle');
         }
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Validate message length
         if (formData.message.length > 500) {
-            setSubmitStatus({
-                type: 'error',
-                message: 'Le message ne peut pas dépasser 500 caractères',
-            });
+            setStatus('error'); // Or we could add a specific message if needed, but the UI has a counter
             return;
         }
 
-        setIsSubmitting(true);
-        setSubmitStatus({ type: null, message: '' });
+        setStatus('submitting');
+
+        const whatsappNumber = '212762728706';
+        const message = `Bonjour EM Taxi, 
+Je demande un service :
+*Nom*: ${formData.name}
+*Service*: ${formData.serviceType}
+*Email*: ${formData.email}
+*Message*: ${formData.message}`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Localhost bypass: Let user test WhatsApp even if PHP is not running
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('Localhost detected: Opening WhatsApp and simulating success.');
+            setStatus('success');
+            window.open(whatsappUrl, '_blank');
+            setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
+            setTimeout(() => setStatus('idle'), 5000);
+            return;
+        }
 
         try {
-            // API endpoint - adjust URL based on your environment
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:9090/api/send-email.php';
-
-            const response = await fetch(apiUrl, {
+            console.log('Sending form data to PHP...', formData);
+            const response = await fetch('/contact.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,35 +79,35 @@ const Contact = () => {
                 body: JSON.stringify(formData),
             });
 
-            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-            if (data.success) {
-                setSubmitStatus({
-                    type: 'success',
-                    message: data.message || 'Votre message a été envoyé avec succès!',
-                });
-                // Reset form
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    serviceType: '',
-                    message: '',
-                });
+            const result = await response.json();
+            console.log('PHP Response:', result);
+
+            if (result.success) {
+                setStatus('success');
+                console.log('Success! Preparing WhatsApp redirect...');
+
+                // Open WhatsApp in a new tab
+                const newWindow = window.open(whatsappUrl, '_blank');
+                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                    console.error('Popup blocked!');
+                    alert('Le message a été envoyé par email, mais l\'ouverture de WhatsApp a été bloquée par votre navigateur. Veuillez autoriser les pop-ups pour ce site.');
+                }
+
+                setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
             } else {
-                setSubmitStatus({
-                    type: 'error',
-                    message: data.message || 'Erreur lors de l\'envoi du message. Veuillez réessayer.',
-                });
+                console.error('PHP returned success: false', result.message);
+                setStatus('error');
+                setTimeout(() => setStatus('idle'), 5000);
             }
         } catch (error) {
-            console.error('Error sending email:', error);
-            setSubmitStatus({
-                type: 'error',
-                message: 'Erreur de connexion. Assurez-vous que le serveur PHP est démarré.',
-            });
-        } finally {
-            setIsSubmitting(false);
+            console.error('Fetch error:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
         }
     };
 
@@ -148,6 +158,17 @@ const Contact = () => {
                     {/* Left Side - Contact Form */}
                     <div className="contact-form-wrapper">
                         <form className="contact-form" onSubmit={handleSubmit}>
+                            {status === 'success' && (
+                                <div className="contact-alert alert-success" data-aos="fade-in">
+                                    ✅ Votre message a été envoyé avec succès ! Nous vous contacterons bientôt.
+                                </div>
+                            )}
+                            {status === 'error' && (
+                                <div className="contact-alert alert-error" data-aos="fade-in">
+                                    ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
+                                </div>
+                            )}
+
                             {/* Name Field */}
                             <div className="form-group">
                                 <label htmlFor="name">{t('contact.form.name')}</label>
@@ -159,6 +180,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder={t('contact.form.namePlaceholder')}
                                     required
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
 
@@ -173,6 +195,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder={t('contact.form.emailPlaceholder')}
                                     required
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
 
@@ -185,7 +208,8 @@ const Contact = () => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    placeholder={t('contact.form.phonePlaceholder')}
+                                    placeholder="+212 6XX XX XX XX"
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
 
@@ -198,6 +222,7 @@ const Contact = () => {
                                     value={formData.serviceType}
                                     onChange={handleChange}
                                     required
+                                    disabled={status === 'submitting'}
                                 >
                                     <option value="">{t('contact.form.servicePlaceholder')}</option>
                                     <option value="Standard">{t('contact.form.serviceOptions.standard')}</option>
@@ -222,25 +247,27 @@ const Contact = () => {
                                     placeholder={t('contact.form.messagePlaceholder')}
                                     rows={5}
                                     required
+                                    disabled={status === 'submitting'}
                                 />
                                 <span className="character-count">{formData.message.length}/500 {t('contact.form.characters')}</span>
                             </div>
 
-                            {/* Status Message */}
-                            {submitStatus.type && (
-                                <div className={`form-status ${submitStatus.type}`}>
-                                    {submitStatus.message}
-                                </div>
-                            )}
+
 
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="contact-submit-btn"
-                                disabled={isSubmitting}
+                                className={`contact-submit-btn ${status === 'submitting' ? 'loading' : ''}`}
+                                disabled={status === 'submitting'}
                             >
-                                <Send size={20} />
-                                <span>{isSubmitting ? 'Envoi en cours...' : 'Envoyer le Message'}</span>
+                                {status === 'submitting' ? (
+                                    <div className="loader"></div>
+                                ) : (
+                                    <>
+                                        <Send size={20} />
+                                        <span>Envoyer le Message</span>
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
