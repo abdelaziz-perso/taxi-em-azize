@@ -29,12 +29,12 @@ const Contact = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        
+
         // Limit message to 500 characters
         if (name === 'message' && value.length > 500) {
             return;
         }
-        
+
         setFormData(prev => ({ ...prev, [name]: value }));
         // Clear status when user starts typing
         if (submitStatus.type) {
@@ -44,7 +44,7 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         // Validate message length
         if (formData.message.length > 500) {
             setSubmitStatus({
@@ -60,7 +60,7 @@ const Contact = () => {
         try {
             // API endpoint - adjust URL based on your environment
             const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:9090/api/send-email.php';
-            
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -234,17 +234,13 @@ const Contact = () => {
                             )}
 
                             {/* Submit Button */}
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 className="contact-submit-btn"
                                 disabled={isSubmitting}
                             >
                                 <Send size={20} />
-<<<<<<< Updated upstream
-                                <span>{t('contact.form.send')}</span>
-=======
                                 <span>{isSubmitting ? 'Envoi en cours...' : 'Envoyer le Message'}</span>
->>>>>>> Stashed changes
                             </button>
                         </form>
                     </div>
