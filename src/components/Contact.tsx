@@ -10,6 +10,7 @@ const Contact = () => {
         email: '',
         phone: '',
         serviceType: '',
+        flightNumber: '',
         message: '',
     });
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -54,7 +55,8 @@ const Contact = () => {
         message = message
             .replace('{name}', formData.name)
             .replace('{service}', formData.serviceType)
-            .replace('{email}', formData.email)
+            .replace('{flightNumber}', formData.flightNumber || 'N/A')
+            .replace('{email}', formData.email || 'N/A')
             .replace('{message}', formData.message);
 
         const encodedMessage = encodeURIComponent(message);
@@ -65,7 +67,7 @@ const Contact = () => {
             console.log('Localhost detected: Opening WhatsApp and simulating success.');
             setStatus('success');
             window.open(whatsappUrl, '_blank');
-            setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
+            setFormData({ name: '', email: '', phone: '', serviceType: '', flightNumber: '', message: '' });
             setTimeout(() => setStatus('idle'), 5000);
             return;
         }
@@ -98,7 +100,7 @@ const Contact = () => {
                     alert('Le message a été envoyé par email, mais l\'ouverture de WhatsApp a été bloquée par votre navigateur. Veuillez autoriser les pop-ups pour ce site.');
                 }
 
-                setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
+                setFormData({ name: '', email: '', phone: '', serviceType: '', flightNumber: '', message: '' });
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 console.error('PHP returned success: false', result.message);
@@ -195,7 +197,6 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder={t('contact.form.emailPlaceholder')}
-                                    required
                                     disabled={status === 'submitting'}
                                 />
                             </div>
@@ -214,6 +215,20 @@ const Contact = () => {
                                 />
                             </div>
 
+                            {/* Flight Number Field */}
+                            <div className="form-group">
+                                <label htmlFor="flightNumber">{t('contact.form.flightNumber')}</label>
+                                <input
+                                    type="text"
+                                    id="flightNumber"
+                                    name="flightNumber"
+                                    value={formData.flightNumber}
+                                    onChange={handleChange}
+                                    placeholder={t('contact.form.flightNumberPlaceholder')}
+                                    disabled={status === 'submitting'}
+                                />
+                            </div>
+
                             {/* Service Type Dropdown */}
                             <div className="form-group">
                                 <label htmlFor="serviceType">{t('contact.form.service')} *</label>
@@ -226,14 +241,9 @@ const Contact = () => {
                                     disabled={status === 'submitting'}
                                 >
                                     <option value="">{t('contact.form.servicePlaceholder')}</option>
-                                    <option value="Standard">{t('contact.form.serviceOptions.standard')}</option>
-                                    <option value="Affaires">{t('contact.form.serviceOptions.business')}</option>
-                                    <option value="Premium">{t('contact.form.serviceOptions.premium')}</option>
-                                    <option value="Transfert Aéroport">{t('contact.form.serviceOptions.airport')}</option>
-                                    <option value="Professionnel & Entreprise">{t('contact.form.serviceOptions.businessService')}</option>
-                                    <option value="Événements & Occasions Spéciales">{t('contact.form.serviceOptions.events')}</option>
-                                    <option value="Service à la Demande">{t('contact.form.serviceOptions.onDemand')}</option>
-                                    <option value="Autre">{t('contact.form.serviceOptions.other')}</option>
+                                    <option value="Transport Aeroport">{t('contact.form.serviceOptions.airport')}</option>
+                                    <option value="Service Taxi">{t('contact.form.serviceOptions.taxi')}</option>
+                                    <option value="Transport Touristique">{t('contact.form.serviceOptions.tourist')}</option>
                                 </select>
                             </div>
 

@@ -135,21 +135,18 @@
     "form": {
       "name": "Nom complet *",
       "namePlaceholder": "Jean Dupont",
-      "email": "Adresse Email *",
+      "email": "Adresse E-mail",
       "emailPlaceholder": "jeandupont@exemple.com",
       "phone": "Numéro de Téléphone",
       "phonePlaceholder": "+212 6XX XX XX XX",
+      "flightNumber": "Numéro de Vol",
+      "flightNumberPlaceholder": "ex: AF1234",
       "service": "Type de Service",
       "servicePlaceholder": "Sélectionnez un service",
       "serviceOptions": {
-        "standard": "Standard - Berline Luxe",
-        "business": "Affaires - Berline Executive",
-        "premium": "Premium - Van/SUV de Luxe",
-        "airport": "Transfert Aéroport",
-        "businessService": "Professionnel & Entreprise",
-        "events": "Événements & Occasions Spéciales",
-        "onDemand": "Service à la Demande",
-        "other": "Autre"
+        "airport": "Transport Aéroport",
+        "taxi": "Service Taxi",
+        "tourist": "Transport Touristique"
       },
       "message": "Votre Message *",
       "messagePlaceholder": "Comment pouvons-nous vous aider ?",
@@ -158,7 +155,7 @@
       "sending": "Envoi en cours...",
       "success": "Message envoyé avec succès !",
       "error": "Erreur lors de l'envoi. Veuillez réessayer.",
-      "whatsappMessage": "Bonjour EM Taxi,\nJe demande un service :\n*Nom*: {name}\n*Service*: {service}\n*Email*: {email}\n*Message*: {message}"
+      "whatsappMessage": "Bonjour EM Taxi,\nJe demande un service :\n*Nom*: {name}\n*Service*: {service}\n*Numéro de vol*: {flightNumber}\n*Email*: {email}\n*Message*: {message}"
     },
     "info": {
       "phone": {

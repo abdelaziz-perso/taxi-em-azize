@@ -4,7 +4,7 @@ import './Pricing.css';
 
 const Pricing = () => {
     const { t } = useLanguage();
-    
+
     const pricingPlans = [
         {
             id: 1,
@@ -117,12 +117,20 @@ const Pricing = () => {
                                     if (contactSection) {
                                         contactSection.scrollIntoView({ behavior: 'smooth' });
                                         // Update URL hash
-                                        window.history.pushState(null, '', `#contact?service=${encodeURIComponent(plan.name)}`);
+                                        // Map pricing plans to new service types
+                                        const serviceMapping: { [key: string]: string } = {
+                                            'Standard': 'Service Taxi',
+                                            'Business': 'Transport Aeroport',
+                                            'Premium': 'Transport Touristique'
+                                        };
+                                        const serviceType = serviceMapping[plan.name] || '';
+
+                                        window.history.pushState(null, '', `#contact?service=${encodeURIComponent(serviceType)}`);
                                         // Trigger service type selection
                                         setTimeout(() => {
                                             const serviceSelect = document.getElementById('serviceType') as HTMLSelectElement;
                                             if (serviceSelect) {
-                                                serviceSelect.value = plan.name;
+                                                serviceSelect.value = serviceType;
                                             }
                                         }, 500);
                                     }

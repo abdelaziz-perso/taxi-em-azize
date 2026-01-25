@@ -133,15 +133,22 @@
     "subtitle": "املأ النموذج أدناه وسيتصل بك فريقنا في أقرب وقت ممكن",
     "form": {
       "name": "الاسم الكامل *",
-      "email": "عنوان البريد الإلكتروني *",
+      "email": "البريد الإلكتروني",
       "phone": "رقم الهاتف",
+      "flightNumber": "رقم الرحلة",
+      "flightNumberPlaceholder": "مثال: AF1234",
       "service": "نوع الخدمة",
-      "message": "الرسالة",
+      "servicePlaceholder": "اختر خدمة",
+      "serviceOptions": {
+        "airport": "نقل المطار",
+        "taxi": "خدمة التاكسي",
+        "tourist": "النقل السياحي"
+      },
       "send": "إرسال الرسالة",
       "sending": "جاري الإرسال...",
       "success": "تم إرسال الرسالة بنجاح!",
       "error": "خطأ في الإرسال. يرجى المحاولة مرة أخرى.",
-      "whatsappMessage": "مرحباً EM Taxi،\nأنا أطلب خدمة:\n*الاسم*: {name}\n*الخدمة*: {service}\n*البريد الإلكتروني*: {email}\n*الرسالة*: {message}"
+      "whatsappMessage": "مرحباً EM Taxi،\nأنا أطلب خدمة:\n*الاسم*: {name}\n*الخدمة*: {service}\n*رقم الرحلة*: {flightNumber}\n*البريد الإلكتروني*: {email}\n*الرسالة*: {message}"
     },
     "info": {
       "phone": {

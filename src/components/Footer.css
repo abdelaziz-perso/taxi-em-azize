@@ -315,6 +315,17 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.payment-icon.no-bg {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.payment-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /* Visa Icon */
 .payment-visa {
     background: linear-gradient(135deg, #1434CB 0%, #1A1F71 100%);
@@ -385,74 +396,6 @@
     border-radius: 50%;
     opacity: 0.6;
     z-index: 1;
-}
-
-/* PayPal Icon */
-.payment-paypal {
-    background: linear-gradient(135deg, #003087 0%, #009CDE 100%);
-    color: #fff;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.payment-paypal::before {
-    content: 'P';
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.1rem;
-    font-weight: 800;
-    opacity: 0.4;
-}
-
-.payment-paypal::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background: #fff;
-    border-radius: 50%;
-    opacity: 0.4;
-}
-
-/* Payoneer Icon */
-.payment-payoneer {
-    background: #FF4800;
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: 900;
-    position: relative;
-}
-
-.payment-payoneer::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    opacity: 0.3;
-}
-
-.payment-payoneer::after {
-    content: '';
-    position: absolute;
-    bottom: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    opacity: 0.3;
 }
 
 .footer-payment-item span {

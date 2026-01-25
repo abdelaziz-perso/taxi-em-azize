@@ -1,6 +1,8 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import logo from '../assets/logo.png';
+import paypalLogo from '../assets/paypal.png';
+import payoneerLogo from '../assets/payonner.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -155,14 +157,14 @@ const Footer = () => {
                             <span>Mastercard</span>
                         </div>
                         <div className="footer-payment-item" title="PayPal">
-                            <div className="payment-icon payment-paypal">
-                                <span>PayPal</span>
+                            <div className="payment-icon no-bg">
+                                <img src={paypalLogo} alt="PayPal" className="payment-img" />
                             </div>
                             <span>PayPal</span>
                         </div>
                         <div className="footer-payment-item" title="Payoneer">
-                            <div className="payment-icon payment-payoneer">
-                                <span>P</span>
+                            <div className="payment-icon no-bg">
+                                <img src={payoneerLogo} alt="Payoneer" className="payment-img" />
                             </div>
                             <span>Payoneer</span>
                         </div>
@@ -186,18 +188,18 @@ const Footer = () => {
                     <div className="footer-developers">
                         <p className="footer-developer-text">
                             {t('footer.developedBy')}{' '}
-                            <a 
-                                href="https://www.linkedin.com/in/abdelaziz-elhathout-191290208/" 
-                                target="_blank" 
+                            <a
+                                href="https://www.linkedin.com/in/abdelaziz-elhathout-191290208/"
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="footer-developer-link"
                             >
                                 Abdelaziz
                             </a>
                             {' '}&{' '}
-                            <a 
-                                href="https://www.linkedin.com/in/hamza-dbani/" 
-                                target="_blank" 
+                            <a
+                                href="https://www.linkedin.com/in/hamza-dbani/"
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="footer-developer-link"
                             >
