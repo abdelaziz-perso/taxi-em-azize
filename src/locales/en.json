@@ -60,7 +60,7 @@
       "vehicle": "Mercedes V-Class, Range Rover"
     },
     "features": {
-      "driver": "Professional driver",
+      "driver": "Professional chauffeur",
       "flightTracking": "Flight tracking",
       "water": "Mineral water provided",
       "chargers": "Phone chargers",
@@ -157,7 +157,8 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Error sending message. Please try again."
+      "error": "Error sending message. Please try again.",
+      "whatsappMessage": "Hello EM Taxi,\nI am requesting a service:\n*Name*: {name}\n*Service*: {service}\n*Email*: {email}\n*Message*: {message}"
     },
     "info": {
       "phone": {

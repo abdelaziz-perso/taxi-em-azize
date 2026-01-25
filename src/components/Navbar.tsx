@@ -72,6 +72,7 @@ const Navbar = () => {
     const languages = [
         { code: 'fr', name: 'Français', flag: '🇫🇷' },
         { code: 'en', name: 'English', flag: '🇬🇧' },
+        { code: 'ar', name: 'العربية', flag: '🇲🇦' },
     ];
 
     const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
@@ -102,7 +103,7 @@ const Navbar = () => {
                         <Phone size={18} />
                         <span>{t('navbar.call')}</span>
                     </a>
-                    
+
                     {/* Language Selector */}
                     <div className="navbar-language-selector">
                         <button
@@ -164,7 +165,7 @@ const Navbar = () => {
                         <Phone size={18} />
                         <span>{t('navbar.call')}</span>
                     </a>
-                    
+
                     {/* Language Selector Mobile */}
                     <div className="mobile-language-selector">
                         {languages.map((lang) => (

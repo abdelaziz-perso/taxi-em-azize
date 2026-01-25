@@ -50,12 +50,13 @@ const Contact = () => {
         setStatus('submitting');
 
         const whatsappNumber = '212762728706';
-        const message = `Bonjour EM Taxi, 
-Je demande un service :
-*Nom*: ${formData.name}
-*Service*: ${formData.serviceType}
-*Email*: ${formData.email}
-*Message*: ${formData.message}`;
+        let message = t('contact.form.whatsappMessage');
+        message = message
+            .replace('{name}', formData.name)
+            .replace('{service}', formData.serviceType)
+            .replace('{email}', formData.email)
+            .replace('{message}', formData.message);
+
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
@@ -160,12 +161,12 @@ Je demande un service :
                         <form className="contact-form" onSubmit={handleSubmit}>
                             {status === 'success' && (
                                 <div className="contact-alert alert-success" data-aos="fade-in">
-                                    ✅ Votre message a été envoyé avec succès ! Nous vous contacterons bientôt.
+                                    ✅ {t('contact.form.success')}
                                 </div>
                             )}
                             {status === 'error' && (
                                 <div className="contact-alert alert-error" data-aos="fade-in">
-                                    ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
+                                    ❌ {t('contact.form.error')}
                                 </div>
                             )}
 
@@ -265,7 +266,7 @@ Je demande un service :
                                 ) : (
                                     <>
                                         <Send size={20} />
-                                        <span>Envoyer le Message</span>
+                                        <span>{t('contact.form.send')}</span>
                                     </>
                                 )}
                             </button>
