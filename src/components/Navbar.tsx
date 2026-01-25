@@ -98,7 +98,7 @@ const Navbar = () => {
                 {/* Right Side Actions */}
                 <div className="navbar-actions">
                     <a href="#contact" className="btn-contact">{t('navbar.contact')}</a>
-                    <a href="tel:+212762728706" className="btn-call">
+                    <a href="tel:+212615919437" className="btn-call">
                         <Phone size={18} />
                         <span>{t('navbar.call')}</span>
                     </a>
@@ -160,7 +160,7 @@ const Navbar = () => {
                 </ul>
                 <div className="mobile-menu-actions">
                     <a href="#contact" className="btn-contact" onClick={() => setIsMobileMenuOpen(false)}>{t('navbar.contact')}</a>
-                    <a href="tel:+212762728706" className="btn-call">
+                    <a href="tel:+212615919437" className="btn-call">
                         <Phone size={18} />
                         <span>{t('navbar.call')}</span>
                     </a>

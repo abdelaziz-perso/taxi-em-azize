@@ -39,7 +39,7 @@ if (empty($name) || empty($email) || empty($serviceType) || empty($message)) {
 // Configuration
 $to_email = 'email@gmail.com';
 $from_email = 'noreply@emtaxi.fr'; // Use a domain-based email for Hostinger
-$whatsapp_number = '212762728706'; // Fixed format (212 + 9 digits)
+$whatsapp_number = '212615919437';
 $site_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 $logo_url = $site_url . '/logo.png';
 
@@ -109,18 +109,62 @@ $headers .= "From: EM Taxi Site <$from_email>" . "\r\n";
 $headers .= "Reply-To: $name <$email>" . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-$mail_success = mail($to_email, $subject, $email_content, $headers);
+// Validate email format
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Adresse email invalide.'
+    ]);
+    exit();
+}
 
-if ($mail_success) {
+// Validate recipient email
+if (!filter_var($to_email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Configuration serveur invalide. Veuillez contacter l\'administrateur.'
+    ]);
+    exit();
+}
+
+// Clear any previous errors
+error_clear_last();
+
+// Try to send email
+$mail_success = @mail($to_email, $subject, $email_content, $headers);
+
+// Check for errors after mail() call
+$last_error = error_get_last();
+
+// Note: mail() may return true even if email is not actually sent
+// This depends on server configuration (SMTP, sendmail, etc.)
+// On many hosting providers, mail() requires proper SMTP configuration
+
+if ($mail_success && !$last_error) {
+    // Log for debugging
+    error_log("Email sent successfully to: $to_email from: $email");
+    
     echo json_encode([
         'success' => true,
         'message' => 'Votre message a été envoyé avec succès !'
     ]);
 } else {
+    // Get error details
+    $error_message = 'Unknown error';
+    if ($last_error) {
+        $error_message = $last_error['message'];
+    }
+    
+    // Log error for debugging
+    error_log("Email send failed. To: $to_email, From: $email, Error: $error_message");
+    
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Une erreur est survenue lors de l\'envoi de l\'email.'
+        'message' => 'Une erreur est survenue lors de l\'envoi de l\'email. Veuillez réessayer ou nous contacter directement par téléphone ou WhatsApp.',
+        'debug' => (defined('DEBUG_MODE') && DEBUG_MODE) ? $error_message : null
     ]);
 }
 ?>

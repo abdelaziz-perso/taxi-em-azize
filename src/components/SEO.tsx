@@ -6,7 +6,7 @@ const SEO = () => {
 
     useEffect(() => {
         // Update document language
-        document.documentElement.lang = language === 'ar' ? 'ar' : language === 'en' ? 'en' : 'fr';
+        document.documentElement.lang = language === 'en' ? 'en' : 'fr';
 
         // Update meta tags based on language
         const updateMetaTag = (name: string, content: string, isProperty = false) => {
@@ -62,7 +62,6 @@ const SEO = () => {
         const localeMap: Record<string, string> = {
             fr: 'fr_FR',
             en: 'en_US',
-            ar: 'ar_MA',
         };
         updateMetaTag('og:locale', localeMap[language] || 'fr_FR', true);
     }, [language]);
@@ -76,11 +75,9 @@ const SEO = () => {
         alternateName: 'EM Taxi',
         description: language === 'en' 
             ? 'Premium luxury transportation services in Morocco since 2009. Private chauffeur, airport transfers, business transportation.'
-            : language === 'ar'
-            ? 'خدمات النقل الفاخر في المغرب منذ 2009. سائق خاص، نقل المطار، نقل الأعمال.'
             : 'Services de transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, transport d\'affaires.',
         url: 'https://emtaxi.fr',
-        telephone: '+212762728706',
+        telephone: '+212615919437',
         email: 'contact@emtaxi.fr',
         address: {
             '@type': 'PostalAddress',

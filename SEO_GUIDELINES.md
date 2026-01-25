@@ -138,7 +138,7 @@ The site uses **LocalBusiness** schema with the following structure:
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "EM Taxi Touristique",
-  "telephone": "+212762728706",
+  "telephone": "+212615919437",
   "email": "contact@emtaxi.fr",
   "address": { "@type": "PostalAddress", "addressCountry": "MA" },
   "openingHoursSpecification": { "opens": "00:00", "closes": "23:59" },

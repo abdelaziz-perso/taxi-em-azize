@@ -32,8 +32,8 @@ const Footer = () => {
         {
             icon: Phone,
             title: t('footer.phone'),
-            content: '+212 7 62 72 87 06',
-            link: 'tel:+212762728706',
+            content: '+212 6 15 91 94 37',
+            link: 'tel:+212615919437',
         },
         {
             icon: Mail,

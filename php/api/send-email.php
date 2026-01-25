@@ -22,7 +22,7 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 // Validate required fields
-$required = ['name', 'email', 'message'];
+$required = ['name', 'email', 'serviceType', 'message'];
 foreach ($required as $field) {
     if (empty($data[$field])) {
         http_response_code(400);
@@ -47,19 +47,17 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // Email configuration
 $to = 'contact@emtaxi.fr';
-$subject = "Nouveau message de contact - EM Taxi Touristique";
+$subject = "Nouvelle réservation - $serviceType - EM Taxi Touristique";
 $from = "noreply@emtaxi.fr";
 
 // Build email body
-$emailBody = "Nouveau message de contact reçu\n\n";
+$emailBody = "Nouvelle demande de service reçue\n\n";
 $emailBody .= "Nom: $name\n";
 $emailBody .= "Email: $email\n";
 if ($phone) {
     $emailBody .= "Téléphone: $phone\n";
 }
-if ($serviceType) {
-    $emailBody .= "Type de service: $serviceType\n";
-}
+$emailBody .= "Type de service: $serviceType\n";
 $emailBody .= "\nMessage:\n$message\n";
 
 // Email headers

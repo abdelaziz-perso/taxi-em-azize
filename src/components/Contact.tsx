@@ -38,6 +38,18 @@ const Contact = () => {
         }
     };
 
+    const createWhatsAppMessage = (data: typeof formData) => {
+        const whatsappNumber = '212615919437';
+        const message = `Réservez Votre Transport Premium
+
+*Nom*: ${data.name}
+*Email*: ${data.email}
+${data.phone ? `*Téléphone*: ${data.phone}\n` : ''}*Service*: ${data.serviceType}
+*Message*: ${data.message}`;
+        const encodedMessage = encodeURIComponent(message);
+        return `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -49,29 +61,24 @@ const Contact = () => {
 
         setStatus('submitting');
 
-        const whatsappNumber = '212762728706';
-        const message = `Bonjour EM Taxi, 
-Je demande un service :
-*Nom*: ${formData.name}
-*Service*: ${formData.serviceType}
-*Email*: ${formData.email}
-*Message*: ${formData.message}`;
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-        // Localhost bypass: Let user test WhatsApp even if PHP is not running
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            console.log('Localhost detected: Opening WhatsApp and simulating success.');
-            setStatus('success');
-            window.open(whatsappUrl, '_blank');
-            setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
-            setTimeout(() => setStatus('idle'), 5000);
-            return;
-        }
-
         try {
-            console.log('Sending form data to PHP...', formData);
-            const response = await fetch('/contact.php', {
+            // Validate form data before sending
+            if (!formData.name || !formData.email || !formData.serviceType || !formData.message) {
+                setStatus('error');
+                alert('Veuillez remplir tous les champs obligatoires.');
+                setTimeout(() => setStatus('idle'), 3000);
+                return;
+            }
+
+            // Determine API URL based on environment
+            // In localhost, try Docker API first, then fallback to /contact.php
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const dockerApiUrl = 'http://localhost:9090/api/send-email.php';
+            const apiUrl = import.meta.env.VITE_API_URL || (isLocalhost ? dockerApiUrl : '/contact.php');
+
+            console.log('Sending form data to PHP API...', { apiUrl, formData });
+            
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,34 +86,74 @@ Je demande un service :
                 body: JSON.stringify(formData),
             });
 
+            // Check if response is ok
             if (!response.ok) {
+                const errorText = await response.text();
+                console.error('HTTP error:', response.status, errorText);
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            const result = await response.json();
+            // Parse JSON response
+            let result;
+            try {
+                const responseText = await response.text();
+                console.log('Raw PHP Response:', responseText);
+                result = JSON.parse(responseText);
+            } catch (parseError) {
+                console.error('Failed to parse JSON response:', parseError);
+                throw new Error('Réponse invalide du serveur');
+            }
+
             console.log('PHP Response:', result);
 
             if (result.success) {
                 setStatus('success');
-                console.log('Success! Preparing WhatsApp redirect...');
+                console.log('Email sent successfully! Waiting 2 seconds before opening WhatsApp...');
 
-                // Open WhatsApp in a new tab
-                const newWindow = window.open(whatsappUrl, '_blank');
-                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                    console.error('Popup blocked!');
-                    alert('Le message a été envoyé par email, mais l\'ouverture de WhatsApp a été bloquée par votre navigateur. Veuillez autoriser les pop-ups pour ce site.');
-                }
+                // Wait 2 seconds, then open WhatsApp with the same data
+                setTimeout(() => {
+                    const whatsappUrl = createWhatsAppMessage(formData);
+                    console.log('Opening WhatsApp with form data...');
+                    
+                    const newWindow = window.open(whatsappUrl, '_blank');
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                        console.error('Popup blocked!');
+                        alert('Le message a été envoyé par email, mais l\'ouverture de WhatsApp a été bloquée par votre navigateur. Veuillez autoriser les pop-ups pour ce site.');
+                    }
+                }, 2000);
 
                 setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 console.error('PHP returned success: false', result.message);
                 setStatus('error');
+                const errorMsg = result.message || 'Erreur lors de l\'envoi du message. Veuillez réessayer ou nous contacter directement.';
+                alert(errorMsg);
                 setTimeout(() => setStatus('idle'), 5000);
             }
         } catch (error) {
             console.error('Fetch error:', error);
             setStatus('error');
+            let errorMessage = 'Erreur de connexion. ';
+            
+            if (error instanceof Error) {
+                if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                    if (isLocalhost) {
+                        errorMessage += 'Assurez-vous que Docker est démarré et que l\'API PHP est accessible sur http://localhost:9090';
+                    } else {
+                        errorMessage += 'Veuillez vérifier votre connexion internet.';
+                    }
+                } else if (error.message.includes('HTTP error')) {
+                    errorMessage += 'Le serveur a renvoyé une erreur. Veuillez réessayer plus tard.';
+                } else {
+                    errorMessage += error.message;
+                }
+            } else {
+                errorMessage += 'Veuillez réessayer ou nous contacter directement.';
+            }
+            
+            alert(errorMessage);
             setTimeout(() => setStatus('idle'), 5000);
         }
     };
@@ -117,17 +164,17 @@ Je demande un service :
             id: 1,
             icon: Phone,
             title: t('contact.info.phone.title'),
-            value: '+212 7 62 72 87 06',
+            value: '+212 6 15 91 94 37',
             subtitle: t('contact.info.phone.subtitle'),
-            link: 'tel:+212762728706',
+            link: 'tel:+212615919437',
         },
         {
             id: 2,
             icon: MessageSquare,
             title: t('contact.info.whatsapp.title'),
-            value: '+212 7 62 72 87 06',
+            value: '+212 6 15 91 94 37',
             subtitle: t('contact.info.whatsapp.subtitle'),
-            link: 'https://wa.me/212762728706',
+            link: 'https://wa.me/212615919437',
         },
         {
             id: 3,
