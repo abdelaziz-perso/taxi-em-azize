@@ -15,7 +15,6 @@ const Pricing = () => {
             features: [
                 t('pricing.features.driver'),
                 t('pricing.features.flightTracking'),
-                t('pricing.features.water'),
                 t('pricing.features.chargers'),
                 t('pricing.features.passengers3'),
             ],
@@ -32,10 +31,8 @@ const Pricing = () => {
             features: [
                 t('pricing.features.allStandard'),
                 t('pricing.features.wifi'),
-                t('pricing.features.newspapers'),
                 t('pricing.features.privacy'),
-                t('pricing.features.passengers3'),
-                t('pricing.features.priority'),
+                t('pricing.features.passengers3')
             ],
             buttonText: t('pricing.button'),
             highlighted: true,
@@ -51,8 +48,7 @@ const Pricing = () => {
                 t('pricing.features.champagne'),
                 t('pricing.features.audio'),
                 t('pricing.features.lighting'),
-                t('pricing.features.passengers7'),
-                t('pricing.features.redCarpet'),
+                t('pricing.features.passengers7')
             ],
             buttonText: t('pricing.button'),
             highlighted: false,

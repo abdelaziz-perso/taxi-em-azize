@@ -61,18 +61,14 @@
     "features": {
       "driver": "سائق محترف",
       "flightTracking": "تتبع الرحلات",
-      "water": "مياه معدنية مجانية",
       "chargers": "شواحن الهاتف",
       "passengers3": "حتى 3 ركاب",
       "passengers7": "حتى 7 ركاب",
       "wifi": "واي فاي على متن السيارة",
-      "newspapers": "صحف يومية",
       "privacy": "حاجز الخصوصية",
-      "priority": "حجز ذو أولوية",
       "champagne": "خدمة الشمبانيا",
       "audio": "نظام صوتي مميز",
       "lighting": "إضاءة محيطة",
-      "redCarpet": "خدمة السجادة الحمراء",
       "allStandard": "جميع خيارات القياسي",
       "allBusiness": "جميع خيارات الأعمال"
     },

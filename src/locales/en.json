@@ -62,18 +62,14 @@
     "features": {
       "driver": "Professional chauffeur",
       "flightTracking": "Flight tracking",
-      "water": "Mineral water provided",
       "chargers": "Phone chargers",
       "passengers3": "Up to 3 passengers",
       "passengers7": "Up to 7 passengers",
       "wifi": "On-board Wi-Fi",
-      "newspapers": "Daily newspapers",
       "privacy": "Privacy partition",
-      "priority": "Priority booking",
       "champagne": "Champagne service",
       "audio": "Premium audio system",
       "lighting": "Ambient lighting",
-      "redCarpet": "Red carpet service",
       "allStandard": "All Standard options",
       "allBusiness": "All Business options"
     },
