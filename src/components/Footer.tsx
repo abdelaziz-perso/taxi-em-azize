@@ -29,7 +29,7 @@ const Footer = () => {
         {
             icon: MapPin,
             title: t('footer.address'),
-            content: '45 Avenue Mohammed V, Rabat 10000, Maroc',
+            content: t('footer.addressValue'),
         },
         {
             icon: Phone,
