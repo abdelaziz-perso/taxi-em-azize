@@ -151,7 +151,7 @@
       "sending": "Envoi en cours...",
       "success": "Message envoyé avec succès !",
       "error": "Erreur lors de l'envoi. Veuillez réessayer.",
-      "whatsappMessage": "Bonjour EM Taxi,\nJe demande un service :\n*Nom*: {name}\n*Service*: {service}\n*Numéro de vol*: {flightNumber}\n*Email*: {email}\n*Message*: {message}"
+      "whatsappMessage": "Bonjour EM Taxi,\nJe demande un service :\n*Nom*: {name}\n*Téléphone*: {phone}\n*Service*: {service}\n*Numéro de vol*: {flightNumber}\n*Email*: {email}\n*Message*: {message}"
     },
     "info": {
       "phone": {

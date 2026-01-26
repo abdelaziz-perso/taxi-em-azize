@@ -54,6 +54,7 @@ const Contact = () => {
         let message = t('contact.form.whatsappMessage');
         message = message
             .replace('{name}', formData.name)
+            .replace('{phone}', formData.phone || 'N/A')
             .replace('{service}', formData.serviceType)
             .replace('{flightNumber}', formData.flightNumber || 'N/A')
             .replace('{email}', formData.email || 'N/A')
