@@ -37,7 +37,7 @@ if (empty($name) || empty($email) || empty($serviceType) || empty($message) || !
 }
 
 // Configuration
-$to_email = 'contact@em-taxi.ma';
+$to_email = 'em.taxi.maroc@gmail.com';
 $from_email = 'no-reply@em-taxi.ma'; // Use a domain-based email for Hostinger
 $whatsapp_number = '212762728706'; // Fixed format (212 + 9 digits)
 $site_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
