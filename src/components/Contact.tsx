@@ -137,9 +137,9 @@ const Contact = () => {
             id: 3,
             icon: Mail,
             title: t('contact.info.email.title'),
-            value: 'contact@em-taxi.ma',
+            value: 'em.taxi.maroc@gmail.com',
             subtitle: t('contact.info.email.subtitle'),
-            link: 'mailto:contact@em-taxi.ma',
+            link: 'mailto:em.taxi.maroc@gmail.com',
         },
     ];
 
@@ -317,9 +317,9 @@ const Contact = () => {
                             <p className="contact-email-description">
                                 {t('contact.emailCta.description')}
                             </p>
-                            <a href="mailto:contact@em-taxi.ma" className="contact-email-btn">
+                            <a href="mailto:em.taxi.maroc@gmail.com" className="contact-email-btn">
                                 <Mail size={18} />
-                                contact@em-taxi.ma
+                                em.taxi.maroc@gmail.com
                             </a>
                         </div>
                     </div>

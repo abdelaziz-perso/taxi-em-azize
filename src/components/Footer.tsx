@@ -40,8 +40,8 @@ const Footer = () => {
         {
             icon: Mail,
             title: t('footer.email'),
-            content: 'contact@em-taxi.ma',
-            link: 'mailto:contact@em-taxi.ma',
+            content: 'em.taxi.maroc@gmail.com',
+            link: 'mailto:em.taxi.maroc@gmail.com',
         },
         {
             icon: Clock,
