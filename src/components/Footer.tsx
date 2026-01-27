@@ -29,7 +29,7 @@ const Footer = () => {
         {
             icon: MapPin,
             title: t('footer.address'),
-            content: '45 Avenue Mohammed V, Rabat 10000, Maroc',
+            content: t('footer.addressValue'),
         },
         {
             icon: Phone,
@@ -40,8 +40,8 @@ const Footer = () => {
         {
             icon: Mail,
             title: t('footer.email'),
-            content: 'contact@emtaxi.fr',
-            link: 'mailto:contact@emtaxi.fr',
+            content: 'em.taxi.maroc@gmail.com',
+            link: 'mailto:em.taxi.maroc@gmail.com',
         },
         {
             icon: Clock,

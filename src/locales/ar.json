@@ -144,7 +144,7 @@
       "sending": "جاري الإرسال...",
       "success": "تم إرسال الرسالة بنجاح!",
       "error": "خطأ في الإرسال. يرجى المحاولة مرة أخرى.",
-      "whatsappMessage": "مرحباً EM Taxi،\nأنا أطلب خدمة:\n*الاسم*: {name}\n*الخدمة*: {service}\n*رقم الرحلة*: {flightNumber}\n*البريد الإلكتروني*: {email}\n*الرسالة*: {message}"
+      "whatsappMessage": "مرحباً EM Taxi،\nأنا أطلب خدمة:\n*الاسم*: {name}\n*الهاتف*: {phone}\n*الخدمة*: {service}\n*رقم الرحلة*: {flightNumber}\n*البريد الإلكتروني*: {email}\n*الرسالة*: {message}"
     },
     "info": {
       "phone": {
@@ -172,6 +172,7 @@
     "ourServices": "خدماتنا",
     "contactUs": "اتصل بنا",
     "address": "العنوان",
+    "addressValue": "كل المغرب",
     "phone": "الهاتف",
     "email": "البريد الإلكتروني",
     "hours": "ساعات العمل",

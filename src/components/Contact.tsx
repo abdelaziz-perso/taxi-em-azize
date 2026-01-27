@@ -54,6 +54,7 @@ const Contact = () => {
         let message = t('contact.form.whatsappMessage');
         message = message
             .replace('{name}', formData.name)
+            .replace('{phone}', formData.phone || 'N/A')
             .replace('{service}', formData.serviceType)
             .replace('{flightNumber}', formData.flightNumber || 'N/A')
             .replace('{email}', formData.email || 'N/A')
@@ -136,9 +137,9 @@ const Contact = () => {
             id: 3,
             icon: Mail,
             title: t('contact.info.email.title'),
-            value: 'contact@emtaxi.fr',
+            value: 'em.taxi.maroc@gmail.com',
             subtitle: t('contact.info.email.subtitle'),
-            link: 'mailto:contact@emtaxi.fr',
+            link: 'mailto:em.taxi.maroc@gmail.com',
         },
     ];
 
@@ -316,9 +317,9 @@ const Contact = () => {
                             <p className="contact-email-description">
                                 {t('contact.emailCta.description')}
                             </p>
-                            <a href="mailto:contact@emtaxi.fr" className="contact-email-btn">
+                            <a href="mailto:em.taxi.maroc@gmail.com" className="contact-email-btn">
                                 <Mail size={18} />
-                                contact@emtaxi.fr
+                                em.taxi.maroc@gmail.com
                             </a>
                         </div>
                     </div>
