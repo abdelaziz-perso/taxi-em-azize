@@ -30,15 +30,15 @@ $phone = strip_tags(trim($data['phone'] ?? ''));
 $serviceType = strip_tags(trim($data['serviceType'] ?? ''));
 $message = strip_tags(trim($data['message'] ?? ''));
 
-if (empty($name) || empty($email) || empty($serviceType) || empty($message)) {
+if (empty($name) || empty($email) || empty($serviceType) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Veuillez remplir tous les champs obligatoires.']);
     exit();
 }
 
 // Configuration
-$to_email = 'email@gmail.com';
-$from_email = 'noreply@emtaxi.fr'; // Use a domain-based email for Hostinger
+$to_email = 'contact@em-taxi.ma';
+$from_email = 'no-reply@em-taxi.ma'; // Use a domain-based email for Hostinger
 $whatsapp_number = '212762728706'; // Fixed format (212 + 9 digits)
 $site_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 $logo_url = $site_url . '/logo.png';
@@ -107,9 +107,10 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= "From: EM Taxi Site <$from_email>" . "\r\n";
 $headers .= "Reply-To: $name <$email>" . "\r\n";
+$headers .= "Return-Path: $from_email" . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-$mail_success = mail($to_email, $subject, $email_content, $headers);
+$mail_success = mail($to_email, $subject, $email_content, $headers, "-f $from_email");
 
 if ($mail_success) {
     echo json_encode([
