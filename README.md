@@ -30,6 +30,20 @@ A modern, responsive website for EM Taxi Touristique - a premium luxury transpor
 - **Lucide React** - Icon library
 - **CSS3** - Styling with custom components
 
+## 🔍 On-page SEO check (Python)
+
+Run the local SEO checker to get a 0–100 score and fix suggestions (no pip install needed):
+
+```bash
+# From project root
+python3 scripts/seo_check.py
+
+# Also check a live URL (e.g. after deploy)
+python3 scripts/seo_check.py --url http://em-taxi.com
+```
+
+Fixes common issues: title/description length, canonical, og:image absolute URLs, images without alt, H1 count, robots.txt, sitemap. See `SEO_GUIDELINES.md` for full SEO practices.
+
 ## 📦 Installation
 
 1. Clone the repository:

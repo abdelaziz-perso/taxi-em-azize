@@ -72,20 +72,20 @@ Every page must include these essential meta tags:
 #### Open Graph (Social Media)
 ```html
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://emtaxi.fr/" />
-<meta property="og:title" content="[Page Title]" />
-<meta property="og:description" content="[Description]" />
-<meta property="og:image" content="https://emtaxi.fr/logo.png" />
+<meta property="og:url" content="http://em-taxi.com/" />
+  <meta property="og:title" content="[Page Title]" />
+  <meta property="og:description" content="[Description]" />
+  <meta property="og:image" content="http://em-taxi.com/logo.png" />
 <meta property="og:locale" content="fr_FR" />
 ```
 
 #### Twitter Cards
 ```html
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://emtaxi.fr/" />
-<meta property="twitter:title" content="[Page Title]" />
-<meta property="twitter:description" content="[Description]" />
-<meta property="twitter:image" content="https://emtaxi.fr/logo.png" />
+<meta property="twitter:url" content="http://em-taxi.com/" />
+  <meta property="twitter:title" content="[Page Title]" />
+  <meta property="twitter:description" content="[Description]" />
+  <meta property="twitter:image" content="http://em-taxi.com/logo.png" />
 ```
 
 ### Language-Specific Meta Tags
@@ -139,7 +139,7 @@ The site uses **LocalBusiness** schema with the following structure:
   "@type": "LocalBusiness",
   "name": "EM Taxi Touristique",
   "telephone": "+212762728706",
-  "email": "contact@emtaxi.fr",
+  "email": "contact@em-taxi.com",
   "address": { "@type": "PostalAddress", "addressCountry": "MA" },
   "openingHoursSpecification": { "opens": "00:00", "closes": "23:59" },
   "serviceType": ["Airport Transfer", "Private Chauffeur", ...],
@@ -361,10 +361,10 @@ The site supports three languages with proper SEO for each:
 For future multi-language pages, implement hreflang:
 
 ```html
-<link rel="alternate" hreflang="fr" href="https://emtaxi.fr/?lang=fr" />
-<link rel="alternate" hreflang="en" href="https://emtaxi.fr/?lang=en" />
-<link rel="alternate" hreflang="ar" href="https://emtaxi.fr/?lang=ar" />
-<link rel="alternate" hreflang="x-default" href="https://emtaxi.fr/" />
+<link rel="alternate" hreflang="fr" href="http://em-taxi.com/?lang=fr" />
+<link rel="alternate" hreflang="en" href="http://em-taxi.com/?lang=en" />
+<link rel="alternate" hreflang="ar" href="http://em-taxi.com/?lang=ar" />
+<link rel="alternate" hreflang="x-default" href="http://em-taxi.com/" />
 ```
 
 ### Translation Files
