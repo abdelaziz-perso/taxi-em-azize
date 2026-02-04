@@ -1,9 +1,9 @@
 import { Plane, Briefcase, PartyPopper, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import avionImg from '../assets/avion.jpg';
-import car1Img from '../assets/car1.jpg';
-import car2Img from '../assets/car2.jpg';
-import car3Img from '../assets/car3.jpg';
+import aeroportImg from '../assets/driver-Aéroport.jpg';
+import professionnelImg from '../assets/driver-Professionnel-Entreprise.jpg';
+import evenementsImg from '../assets/driver-Événements-Occasions Spéciales.jpg';
+import serviceDemandeImg from '../assets/driver-Service-à-la-Demande.jpg';
 import './Services.css';
 
 const Services = () => {
@@ -15,28 +15,28 @@ const Services = () => {
             icon: Plane,
             title: t('services.airport.title'),
             description: t('services.airport.description'),
-            image: avionImg,
+            image: aeroportImg,
         },
         {
             id: 2,
             icon: Briefcase,
             title: t('services.business.title'),
             description: t('services.business.description'),
-            image: car1Img,
+            image: professionnelImg,
         },
         {
             id: 3,
             icon: PartyPopper,
             title: t('services.events.title'),
             description: t('services.events.description'),
-            image: car2Img,
+            image: evenementsImg,
         },
         {
             id: 4,
             icon: Clock,
             title: t('services.onDemand.title'),
             description: t('services.onDemand.description'),
-            image: car3Img,
+            image: serviceDemandeImg,
         },
     ];
 

@@ -3,7 +3,8 @@
     padding: 6rem 0;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 .contact::before {
@@ -23,6 +24,7 @@
     padding: 0 2rem;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 /* Section Header */
@@ -68,6 +70,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
+    min-width: 0;
 }
 
 /* Contact Form */
@@ -78,6 +81,7 @@
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    min-width: 0;
 }
 
 .contact-form {
@@ -112,6 +116,8 @@
     font-family: inherit;
     transition: all 0.3s ease;
     outline: none;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .form-group input::placeholder,
@@ -490,5 +496,139 @@
 
     .contact-email-description {
         font-size: 0.95rem;
+    }
+}
+
+/* Samsung Galaxy S8 & small phones: 360px portrait */
+@media (max-width: 400px) {
+    .contact {
+        padding: 2.5rem 0;
+    }
+
+    .contact-container {
+        padding: 0 0.75rem;
+    }
+
+    .contact-header {
+        margin-bottom: 1.75rem;
+    }
+
+    .contact-label {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.875rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem 1rem;
+        font-size: 0.9375rem;
+        border-radius: 10px;
+    }
+
+    .form-group select {
+        padding-right: 2.5rem;
+        background-position: right 0.75rem center;
+        background-size: 18px;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+    .character-count {
+        font-size: 0.8rem;
+    }
+
+    .contact-submit-btn {
+        width: 100%;
+        min-width: unset;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+
+    .contact-info-card {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .contact-info-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .contact-info-title {
+        font-size: 0.8rem;
+    }
+
+    .contact-info-value {
+        font-size: 1rem;
+        word-break: break-all;
+    }
+
+    .contact-info-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .contact-email-cta {
+        padding: 1.5rem 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .contact-email-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1rem;
+    }
+
+    .contact-email-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-email-description {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-email-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+        word-break: break-all;
+        text-align: center;
+    }
+}
+
+/* Galaxy S8 landscape & similar: 740px width */
+@media (max-width: 740px) {
+    .contact-content {
+        gap: 2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
     }
 }

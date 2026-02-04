@@ -139,7 +139,7 @@ The site uses **LocalBusiness** schema with the following structure:
   "@type": "LocalBusiness",
   "name": "EM Taxi Touristique",
   "telephone": "+212762728706",
-  "email": "contact@em-taxi.com",
+  "email": "em.taxi.maroc@gmail.com",
   "address": { "@type": "PostalAddress", "addressCountry": "MA" },
   "openingHoursSpecification": { "opens": "00:00", "closes": "23:59" },
   "serviceType": ["Airport Transfer", "Private Chauffeur", ...],

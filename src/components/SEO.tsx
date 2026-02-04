@@ -81,7 +81,7 @@ const SEO = () => {
             : 'Services de transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, transport d\'affaires.',
         url: 'http://em-taxi.com',
         telephone: '+212762728706',
-        email: 'contact@emtaxi.fr',
+        email: 'em.taxi.maroc@gmail.com',
         address: {
             '@type': 'PostalAddress',
             addressCountry: 'MA',
