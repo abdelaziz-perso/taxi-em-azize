@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ObfuscatedEmail, { CONTACT_EMAIL_ENCODED, ObfuscatedEmailDisplay } from './ObfuscatedEmail';
 import logo from '../assets/logo.png';
 import paypalLogo from '../assets/paypal.png';
 import payoneerLogo from '../assets/payonner.png';
@@ -40,8 +41,9 @@ const Footer = () => {
         {
             icon: Mail,
             title: t('footer.email'),
-            content: 'em.taxi.maroc@gmail.com',
-            link: 'mailto:em.taxi.maroc@gmail.com',
+            content: null,
+            link: null,
+            isEmail: true,
         },
         {
             icon: Clock,
@@ -126,7 +128,12 @@ const Footer = () => {
                         <div className="footer-contact-list">
                             {contactInfo.map((info) => {
                                 const IconComponent = info.icon;
-                                const content = info.link ? (
+                                const isEmail = 'isEmail' in info && info.isEmail;
+                                const content = isEmail ? (
+                                    <ObfuscatedEmail encoded={CONTACT_EMAIL_ENCODED} title={t('footer.email')}>
+                                        <ObfuscatedEmailDisplay encoded={CONTACT_EMAIL_ENCODED} />
+                                    </ObfuscatedEmail>
+                                ) : info.link ? (
                                     <a href={info.link}>{info.content}</a>
                                 ) : (
                                     <span>{info.content}</span>

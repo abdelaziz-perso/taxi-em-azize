@@ -54,6 +54,15 @@
   <meta name="theme-color" content="#ff6b35" />
   <link rel="canonical" href="https://em-taxi.com/" />
 
+  <!-- Google Analytics (GA4): replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <!-- Fonts: load async to avoid render-blocking (saves ~1.6s) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

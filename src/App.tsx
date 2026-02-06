@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { LanguageProvider } from './contexts/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -11,22 +10,24 @@ import ScrollProgress from './components/ScrollProgress'
 import WelcomeAssistant from './components/WelcomeAssistant'
 import SEO from './components/SEO'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
 import './App.css'
 
 function App() {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 100,
-      delay: 100,
+    // Load AOS CSS asynchronously to avoid render-blocking (SEO)
+    import('aos/dist/aos.css').then(() => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100,
+        delay: 100,
+      });
     });
   }, []);
 
   return (
-    <LanguageProvider>
+    <>
       <SEO />
       <div className="app">
         <ScrollProgress />
@@ -39,7 +40,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
-    </LanguageProvider>
+    </>
   )
 }
 

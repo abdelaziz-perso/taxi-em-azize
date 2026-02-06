@@ -48,8 +48,10 @@ const Services = () => {
                                         src={service.image}
                                         alt={service.title ? `${service.title} - EM Taxi Touristique - Transport premium au Maroc` : 'EM Taxi Touristique - Service de transport premium au Maroc'}
                                         loading="lazy"
+                                        decoding="async"
                                         width="800"
                                         height="600"
+                                        sizes="(max-width: 968px) 100vw, 50vw"
                                     />
                                     <div className="service-card-overlay"></div>
                                 </div>

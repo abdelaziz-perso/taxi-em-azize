@@ -143,12 +143,14 @@ const About = () => {
 
                     {/* Right Side - Image */}
                     <div className="about-image">
-                        <img 
-                            src={driverImg} 
-                            alt="Chauffeur professionnel EM Taxi Touristique - Transport premium au Maroc depuis 2009" 
+                        <img
+                            src={driverImg}
+                            alt="Chauffeur professionnel EM Taxi Touristique - Transport premium au Maroc depuis 2009"
                             loading="lazy"
+                            decoding="async"
                             width="600"
                             height="400"
+                            sizes="(max-width: 1100px) 100vw, 50vw"
                         />
                         <div className="about-badge" aria-label={`15+ ${t('about.excellence.badge')}`}>
                             <div className="about-badge-value">15+</div>

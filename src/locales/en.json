@@ -216,5 +216,15 @@
     "cta": "Request a ride",
     "close": "Close assistant",
     "open": "Open assistant"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved. Use the links below to find your way.",
+    "home": "Back to home",
+    "services": "Our services",
+    "contact": "Contact",
+    "helpBefore": "Found a broken link? ",
+    "reportLink": "Contact us",
+    "helpAfter": " to report it."
   }
 }

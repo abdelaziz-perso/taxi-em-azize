@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Phone, Mail, MessageSquare, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ObfuscatedEmail, { CONTACT_EMAIL_ENCODED, ObfuscatedEmailDisplay } from './ObfuscatedEmail';
 import './Contact.css';
 
 const Contact = () => {
@@ -137,9 +138,8 @@ const Contact = () => {
             id: 3,
             icon: Mail,
             title: t('contact.info.email.title'),
-            value: 'em.taxi.maroc@gmail.com',
             subtitle: t('contact.info.email.subtitle'),
-            link: 'mailto:em.taxi.maroc@gmail.com',
+            isEmail: true,
         },
     ];
 
@@ -288,7 +288,19 @@ const Contact = () => {
                     <div className="contact-info-wrapper">
                         {contactInfo.map((info) => {
                             const IconComponent = info.icon;
-                            return (
+                            const isEmail = 'isEmail' in info && info.isEmail;
+                            const content = isEmail ? (
+                                <ObfuscatedEmail encoded={CONTACT_EMAIL_ENCODED} className="contact-info-card" title={info.subtitle}>
+                                    <div className="contact-info-icon">
+                                        <IconComponent size={24} />
+                                    </div>
+                                    <div className="contact-info-content">
+                                        <h4 className="contact-info-title">{info.title}</h4>
+                                        <p className="contact-info-value"><ObfuscatedEmailDisplay encoded={CONTACT_EMAIL_ENCODED} /></p>
+                                        <p className="contact-info-subtitle">{info.subtitle}</p>
+                                    </div>
+                                </ObfuscatedEmail>
+                            ) : (
                                 <a
                                     key={info.id}
                                     href={info.link}
@@ -306,6 +318,7 @@ const Contact = () => {
                                     </div>
                                 </a>
                             );
+                            return isEmail ? <span key={info.id}>{content}</span> : content;
                         })}
 
                         {/* Email CTA Box */}
@@ -317,10 +330,10 @@ const Contact = () => {
                             <p className="contact-email-description">
                                 {t('contact.emailCta.description')}
                             </p>
-                            <a href="mailto:em.taxi.maroc@gmail.com" className="contact-email-btn">
+                            <ObfuscatedEmail encoded={CONTACT_EMAIL_ENCODED} className="contact-email-btn" title={t('contact.emailCta.title')}>
                                 <Mail size={18} />
-                                em.taxi.maroc@gmail.com
-                            </a>
+                                <span className="contact-email-btn-text"><ObfuscatedEmailDisplay encoded={CONTACT_EMAIL_ENCODED} /></span>
+                            </ObfuscatedEmail>
                         </div>
                     </div>
                 </div>
