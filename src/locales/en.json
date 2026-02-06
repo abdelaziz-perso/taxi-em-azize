@@ -8,16 +8,16 @@
     "call": "Call"
   },
   "hero": {
-    "subtitle": "A CUSTOM SERVICE FOR YOUR TRAVELS",
-    "title": "Chauffeur at your disposal",
-    "cta": "BOOK MY CHAUFFEUR",
+    "subtitle": "LUXURY TRANSPORT SERVICE IN MOROCCO — CASABLANCA, MARRAKECH, RABAT",
+    "title": "Luxury cars with chauffeur",
+    "cta": "Book Now",
     "ctaPricing": "View pricing"
   },
   "services": {
-    "label": "OUR PREMIUM SERVICES",
-    "title": "Transport Solutions",
-    "titleHighlight": "of Excellence",
-    "subtitle": "Custom chauffeur services combining luxury, comfort and professionalism to meet all your transportation needs",
+    "label": "TOURIST & PREMIUM TRANSPORT",
+    "title": "Luxury Transport",
+    "titleHighlight": "Services",
+    "subtitle": "Private chauffeur and tourist transport: airport transfers, business, events. Mercedes & BMW fleet, 24/7.",
     "airport": {
       "title": "Airport Transfers",
       "description": "Reliable pickup and drop-off service to all airports. Flight tracking for perfect punctuality and stress-free travel."

@@ -8,16 +8,16 @@
     "call": "Appeler"
   },
   "hero": {
-    "subtitle": "UN SERVICE SUR MESURE POUR VOS DÉPLACEMENTS",
-    "title": "Mise à disposition de chauffeur",
-    "cta": "JE RÉSERVE MON CHAUFFEUR",
+    "subtitle": "SERVICE DE TRANSPORT DE LUXE AU MAROC — CASABLANCA, MARRAKECH, RABAT",
+    "title": "Voitures de luxe avec chauffeur",
+    "cta": "Réservez Maintenant",
     "ctaPricing": "Voir les tarifs"
   },
   "services": {
-    "label": "NOS SERVICES PREMIUM",
-    "title": "Solutions de Transport",
-    "titleHighlight": "d'Excellence",
-    "subtitle": "Services de chauffeur sur mesure alliant luxe, confort et professionnalisme pour répondre à tous vos besoins de déplacement",
+    "label": "TRANSPORT TOURISTIQUE & PREMIUM",
+    "title": "Services de Transport",
+    "titleHighlight": "de Luxe",
+    "subtitle": "Chauffeur privé et transport touristique : transferts aéroport, affaires, événements. Flotte Mercedes & BMW, disponible 24h/24.",
     "airport": {
       "title": "Transferts Aéroport",
       "description": "Service de prise en charge et dépose fiable vers tous les aéroports. Suivi de vol pour une parfaite ponctualité et un voyage sans stress."

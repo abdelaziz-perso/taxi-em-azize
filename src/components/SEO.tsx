@@ -25,22 +25,22 @@ const SEO = () => {
             meta.setAttribute('content', content);
         };
 
-        // SEO content based on language
+        // SEO content (aligned with "transport de luxe Maroc" / Apexia-style ranking)
         const seoContent = {
             fr: {
-                title: 'EM Taxi - Chauffeur Privé & Transport Premium Maroc',
-                description: 'EM Taxi Touristique : transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, affaires et événements. Mercedes, BMW. 24/7. Réservation.',
-                keywords: 'taxi maroc, chauffeur privé maroc, transport de luxe maroc, transfert aéroport maroc, taxi touristique maroc, mercedes chauffeur maroc, transport premium maroc, EM Taxi Touristique',
+                title: 'EM Taxi | Voitures de luxe avec chauffeur | Transport touristique | Casablanca | Marrakech | Rabat | Maroc',
+                description: 'Service de transport de luxe au Maroc depuis 2009. Chauffeur privé, voitures Mercedes & BMW. Transferts aéroport, transport touristique, affaires et événements. Casablanca, Marrakech, Rabat. Réservez 24/7.',
+                keywords: 'transport de luxe maroc, services de transport de luxe au maroc, voitures de luxe avec chauffeur, chauffeur privé maroc, transport touristique maroc, transfert aéroport casablanca, taxi aéroport maroc, navette aéroport, Mercedes chauffeur maroc, réservation chauffeur privé, VIP transport maroc, Casablanca Marrakech Rabat',
             },
             en: {
-                title: 'EM Taxi - Private Chauffeur & Premium Transport Morocco',
-                description: 'EM Taxi Touristique offers luxury transportation in Morocco since 2009. Private chauffeur, airport transfers, business and events. Mercedes S-Class, BMW. 24/7 service. Easy booking.',
-                keywords: 'taxi morocco, private chauffeur morocco, luxury transport morocco, airport transfer morocco, tourist taxi morocco, mercedes chauffeur morocco, premium transport morocco, EM Taxi Touristique',
+                title: 'EM Taxi | Luxury Cars with Chauffeur | Tourist Transport | Casablanca | Marrakech | Rabat | Morocco',
+                description: 'Luxury transport service in Morocco since 2009. Private chauffeur, Mercedes & BMW. Airport transfers, tourist transport, business and events. Casablanca, Marrakech, Rabat. Book 24/7.',
+                keywords: 'luxury transport morocco, luxury chauffeur service morocco, private chauffeur morocco, tourist transport morocco, airport transfer casablanca, taxi airport morocco, Mercedes chauffeur morocco, VIP transport morocco, Casablanca Marrakech Rabat',
             },
             ar: {
-                title: 'EM تاكسي توريستيك - سائق خاص ونقل فاخر المغرب',
-                description: 'EM تاكسي توريستيك تقدم خدمات النقل الفاخر في المغرب منذ 2009. سائق خاص، نقل المطار، نقل الأعمال والفعاليات. مرسيدس S-Class، BMW. خدمة 24/7. حجز سهل.',
-                keywords: 'تاكسي المغرب, سائق خاص المغرب, نقل فاخر المغرب, نقل المطار المغرب, تاكسي سياحي المغرب, مرسيدس سائق المغرب, نقل ممتاز المغرب, EM تاكسي توريستيك',
+                title: 'EM Taxi | سيارات فاخرة مع سائق | نقل سياحي | الدار البيضاء | مراكش | الرباط | المغرب',
+                description: 'خدمة نقل فاخر في المغرب منذ 2009. سائق خاص، مرسيدس وبي إم دبليو. نقل المطار، النقل السياحي. الدار البيضاء، مراكش، الرباط. حجز 24/7.',
+                keywords: 'نقل فاخر المغرب, خدمات نقل فاخر المغرب, سيارات فاخرة مع سائق, سائق خاص المغرب, نقل سياحي المغرب, نقل مطار الدار البيضاء, تاكسي مطار المغرب, مرسيدس سائق المغرب, الدار البيضاء مراكش الرباط',
             },
         };
 
@@ -75,10 +75,10 @@ const SEO = () => {
         name: 'EM Taxi Touristique',
         alternateName: 'EM Taxi',
         description: language === 'en' 
-            ? 'Premium luxury transportation services in Morocco since 2009. Private chauffeur, airport transfers, business transportation.'
+            ? 'Luxury transport service in Morocco since 2009. Private chauffeur, Mercedes & BMW. Airport transfers, tourist transport. Casablanca, Marrakech, Rabat. 24/7.'
             : language === 'ar'
-            ? 'خدمات النقل الفاخر في المغرب منذ 2009. سائق خاص، نقل المطار، نقل الأعمال.'
-            : 'Services de transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, transport d\'affaires.',
+            ? 'خدمة نقل فاخر في المغرب منذ 2009. سائق خاص، مرسيدس وبي إم دبليو. نقل المطار، النقل السياحي. الدار البيضاء، مراكش، الرباط. 24/7.'
+            : 'Services de transport de luxe au Maroc depuis 2009. Chauffeur privé, Mercedes & BMW. Transferts aéroport, transport touristique. Casablanca, Marrakech, Rabat. 24/7.',
         url: 'https://em-taxi.com',
         telephone: '+212762728706',
         email: 'em.taxi.maroc@gmail.com',
@@ -113,16 +113,21 @@ const SEO = () => {
             ratingValue: '4.9',
             reviewCount: '1000',
         },
-        areaServed: {
-            '@type': 'Country',
-            name: 'Morocco',
-        },
+        areaServed: [
+            { '@type': 'City', name: 'Casablanca', addressCountry: 'MA' },
+            { '@type': 'City', name: 'Marrakech', addressCountry: 'MA' },
+            { '@type': 'City', name: 'Rabat', addressCountry: 'MA' },
+            { '@type': 'City', name: 'Fès', addressCountry: 'MA' },
+            { '@type': 'Country', name: 'Morocco' },
+        ],
         serviceType: [
+            'Luxury Transport',
+            'Private Chauffeur Service',
+            'Transport Touristique',
             'Airport Transfer',
-            'Private Chauffeur',
+            'VIP Transport',
             'Business Transportation',
             'Event Transportation',
-            'Luxury Transportation',
         ],
         hasOfferCatalog: {
             '@type': 'OfferCatalog',
