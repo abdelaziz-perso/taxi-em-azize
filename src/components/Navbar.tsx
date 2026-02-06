@@ -83,7 +83,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="navbar-logo">
                     <a href="#accueil" aria-label="EM Taxi Touristique - Accueil">
-                        <img src={logo} alt="EM Taxi Touristique - Logo - Transport Premium au Maroc" />
+                        <img src={logo} alt="EM Taxi Touristique - Logo - Transport Premium au Maroc" width="180" height="50" />
                     </a>
                 </div>
 
@@ -175,6 +175,7 @@ const Navbar = () => {
                                 onClick={() => {
                                     setLanguage(lang.code as 'fr' | 'en');
                                 }}
+                                aria-label={lang.name}
                             >
                                 {lang.flag}
                             </button>

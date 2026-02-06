@@ -63,13 +63,13 @@ const WelcomeAssistant = () => {
     return (
         <div className={`welcome-assistant ${isVisible ? 'assistant-visible' : 'assistant-hidden'} ${isHidden ? 'hidden' : ''}`}>
             <div className="assistant-card">
-                <button className="assistant-close" onClick={handleClose}>
+                <button type="button" className="assistant-close" onClick={handleClose} aria-label={t('welcomeAssistant.close')}>
                     <X size={16} />
                 </button>
 
                 <div className="assistant-header">
                     <div className="assistant-avatar">
-                        <img src={chauffeurAvatar} alt="EM Assistant - Assistant virtuel EM Taxi Touristique" />
+                        <img src={chauffeurAvatar} alt="EM Assistant - Assistant virtuel EM Taxi Touristique" width="48" height="48" loading="lazy" />
                         <span className="online-indicator" aria-label="En ligne"></span>
                     </div>
                     <div className="assistant-info">
@@ -92,9 +92,9 @@ const WelcomeAssistant = () => {
                 </div>
             </div>
 
-            <div className="assistant-toggle" onClick={() => setIsVisible(true)}>
+            <button type="button" className="assistant-toggle" onClick={() => setIsVisible(true)} aria-label={t('welcomeAssistant.open')}>
                 <MessageSquare size={24} />
-            </div>
+            </button>
         </div>
     );
 };

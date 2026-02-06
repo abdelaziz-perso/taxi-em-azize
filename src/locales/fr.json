@@ -10,7 +10,8 @@
   "hero": {
     "subtitle": "UN SERVICE SUR MESURE POUR VOS DÉPLACEMENTS",
     "title": "Mise à disposition de chauffeur",
-    "cta": "JE RÉSERVE MON CHAUFFEUR"
+    "cta": "JE RÉSERVE MON CHAUFFEUR",
+    "ctaPricing": "Voir les tarifs"
   },
   "services": {
     "label": "NOS SERVICES PREMIUM",
@@ -103,6 +104,7 @@
       "title": "L'Excellence à",
       "titleHighlight": "Chaque Trajet",
       "description": "Depuis 2009, EM TAXI TOURISTIQUE est le choix privilégié pour les services de transport haut de gamme. Nous allions expertise professionnelle et engagement indéfectible pour l'excellence.",
+      "reserveLink": "Contactez-nous pour réserver.",
       "quote": "Que vous voyagiez pour affaires ou pour le plaisir, nous nous engageons à faire de chaque course une expérience fluide et luxueuse.",
       "badge": "Ans d'Excellence"
     },
@@ -175,6 +177,11 @@
   },
   "footer": {
     "description": "Votre partenaire de confiance pour un transport premium et professionnel au Maroc. Excellence, ponctualité et confort depuis 2009.",
+    "share": "Partager cette page",
+    "shareTwitter": "Partager sur Twitter",
+    "shareFacebook": "Partager sur Facebook",
+    "shareLinkedIn": "Partager sur LinkedIn",
+    "shareWhatsApp": "Partager sur WhatsApp",
     "quickLinks": "Liens Rapides",
     "ourServices": "Nos Services",
     "contactUs": "Contactez-nous",
@@ -195,6 +202,8 @@
     "title": "EM Assistant",
     "online": "En ligne",
     "message": "Bonjour ! Bienvenue chez EM Taxi Touristique. Je suis votre assistant virtuel. Nous sommes là pour assurer votre confort et votre sécurité lors de tous vos déplacements. Comment puis-je vous aider aujourd'hui ?",
-    "cta": "Demander un trajet"
+    "cta": "Demander un trajet",
+    "close": "Fermer l'assistant",
+    "open": "Ouvrir l'assistant"
   }
 }

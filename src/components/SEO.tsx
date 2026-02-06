@@ -71,7 +71,7 @@ const SEO = () => {
     const structuredData = {
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
-        '@id': 'http://em-taxi.com/#organization',
+        '@id': 'https://em-taxi.com/#organization',
         name: 'EM Taxi Touristique',
         alternateName: 'EM Taxi',
         description: language === 'en' 
@@ -79,7 +79,7 @@ const SEO = () => {
             : language === 'ar'
             ? 'خدمات النقل الفاخر في المغرب منذ 2009. سائق خاص، نقل المطار، نقل الأعمال.'
             : 'Services de transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, transport d\'affaires.',
-        url: 'http://em-taxi.com',
+        url: 'https://em-taxi.com',
         telephone: '+212762728706',
         email: 'em.taxi.maroc@gmail.com',
         address: {
@@ -106,7 +106,7 @@ const SEO = () => {
             closes: '23:59',
         },
         priceRange: '$$$',
-        image: 'http://em-taxi.com/logo.png',
+        image: 'https://em-taxi.com/logo.png',
         sameAs: [],
         aggregateRating: {
             '@type': 'AggregateRating',

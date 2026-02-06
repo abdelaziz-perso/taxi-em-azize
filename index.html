@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="./favicon.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary Meta Tags -->
@@ -15,18 +16,24 @@
     content="taxi maroc, chauffeur privé maroc, transport de luxe maroc, transfert aéroport maroc, taxi touristique maroc, mercedes chauffeur maroc, transport premium maroc, EM Taxi Touristique" />
   <meta name="author" content="EM Taxi Touristique" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="French" />
+  <meta name="language" content="fr" />
   <meta name="revisit-after" content="7 days" />
   <meta name="geo.region" content="MA" />
   <meta name="geo.placename" content="Morocco" />
 
+  <!-- Language / hreflang for SEO -->
+  <link rel="alternate" hreflang="fr" href="https://em-taxi.com/?lang=fr" />
+  <link rel="alternate" hreflang="en" href="https://em-taxi.com/?lang=en" />
+  <link rel="alternate" hreflang="ar" href="https://em-taxi.com/?lang=ar" />
+  <link rel="alternate" hreflang="x-default" href="https://em-taxi.com/" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://em-taxi.com/" />
+  <meta property="og:url" content="https://em-taxi.com/" />
   <meta property="og:title" content="EM Taxi - Chauffeur Privé & Transport Premium Maroc" />
   <meta property="og:description"
     content="EM Taxi Touristique : transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, affaires et événements. Mercedes, BMW. 24/7. Réservation." />
-  <meta property="og:image" content="http://em-taxi.com/logo.png" />
+  <meta property="og:image" content="https://em-taxi.com/logo.png" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="ar_MA" />
@@ -34,26 +41,36 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="http://em-taxi.com/" />
+  <meta property="twitter:url" content="https://em-taxi.com/" />
   <meta property="twitter:title" content="EM Taxi - Chauffeur Privé & Transport Premium Maroc" />
   <meta property="twitter:description"
     content="EM Taxi Touristique : transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, affaires et événements. Mercedes, BMW. 24/7. Réservation." />
-  <meta property="twitter:image" content="http://em-taxi.com/logo.png" />
+  <meta property="twitter:image" content="https://em-taxi.com/logo.png" />
 
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="5cca444fee08cb36" />
 
   <!-- Additional SEO -->
   <meta name="theme-color" content="#ff6b35" />
-  <link rel="canonical" href="http://em-taxi.com/" />
+  <link rel="canonical" href="https://em-taxi.com/" />
 
-  <!-- Preconnect for performance -->
+  <!-- Fonts: load async to avoid render-blocking (saves ~1.6s) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" /></noscript>
 </head>
 
 <body>
   <h1 class="sr-only">EM Taxi - Chauffeur Privé & Transport Premium Maroc</h1>
+  <div id="seo-content" class="seo-content">
+    <p>EM Taxi est votre partenaire <strong>chauffeur privé</strong> et <strong>transport premium</strong> au <strong>Maroc</strong>. Depuis 2009, EM Taxi Touristique propose un service de transport de luxe à Casablanca, Marrakech, Rabat et dans tout le Maroc.</p>
+    <p>Réservez un <strong>chauffeur privé</strong> pour vos transferts aéroport, déplacements professionnels, événements et occasions spéciales. Notre flotte Mercedes et BMW assure un <strong>transport premium</strong> confortable et ponctuel, disponible 24h/24 et 7j/7.</p>
+    <p>Services proposés : transferts aéroport avec suivi de vol, transport professionnel et entreprise, chauffeur pour événements et mariages, service à la demande pour visites touristiques. Tarifs transparents et formules Standard, Affaires et Premium.</p>
+    <p>EM Taxi - Chauffeur Privé & Transport Premium Maroc : une équipe de chauffeurs expérimentés, des véhicules haut de gamme et un engagement qualité pour tous vos déplacements au Maroc. Réservation simple par téléphone ou formulaire en ligne.</p>
+    <p>Que vous voyagiez pour affaires ou pour le tourisme, choisir EM Taxi c'est opter pour la fiabilité, le confort et le professionnalisme. Contactez-nous pour réserver votre chauffeur privé ou obtenir un devis personnalisé pour votre transport premium au Maroc.</p>
+    <p>Réservation par téléphone au 06 72 72 87 06 ou via le formulaire de contact. EM Taxi - Chauffeur Privé & Transport Premium Maroc : votre référence pour le transport de luxe à Casablanca, Marrakech, Rabat, Fès et aéroports du Maroc.</p>
+  </div>
   <div id="root"></div>
   <script type="module" src="./src/main.tsx"></script>
 </body>

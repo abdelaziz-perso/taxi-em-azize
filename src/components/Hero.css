@@ -100,6 +100,21 @@
     opacity: 0;
     display: flex;
     align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.hero-cta-secondary {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.hero-cta-secondary:hover {
+    color: #fff;
 }
 
 .btn-reserve {

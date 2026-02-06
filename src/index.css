@@ -1,5 +1,4 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* Fonts loaded async via index.html to avoid render-blocking */
 
 /* CSS Reset & Root Variables */
 :root {
@@ -46,6 +45,22 @@ body {
   background-color: var(--color-white);
   color: var(--color-dark);
   overflow-x: hidden;
+}
+
+/* Crawlable intro content (250+ words, H1 keywords) - visible for SEO */
+.seo-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+}
+.seo-content p {
+  margin-bottom: 0.75rem;
+}
+.seo-content p:last-child {
+  margin-bottom: 0;
 }
 
 /* Visually hidden H1 for crawlers (SPA) - present in initial HTML */

@@ -10,34 +10,10 @@ const Services = () => {
     const { t } = useLanguage();
     
     const services = [
-        {
-            id: 1,
-            icon: Plane,
-            title: t('services.airport.title'),
-            description: t('services.airport.description'),
-            image: aeroportImg,
-        },
-        {
-            id: 2,
-            icon: Briefcase,
-            title: t('services.business.title'),
-            description: t('services.business.description'),
-            image: professionnelImg,
-        },
-        {
-            id: 3,
-            icon: PartyPopper,
-            title: t('services.events.title'),
-            description: t('services.events.description'),
-            image: evenementsImg,
-        },
-        {
-            id: 4,
-            icon: Clock,
-            title: t('services.onDemand.title'),
-            description: t('services.onDemand.description'),
-            image: serviceDemandeImg,
-        },
+        { id: 1, slug: 'airport', icon: Plane, title: t('services.airport.title'), description: t('services.airport.description'), image: aeroportImg },
+        { id: 2, slug: 'business', icon: Briefcase, title: t('services.business.title'), description: t('services.business.description'), image: professionnelImg },
+        { id: 3, slug: 'events', icon: PartyPopper, title: t('services.events.title'), description: t('services.events.description'), image: evenementsImg },
+        { id: 4, slug: 'ondemand', icon: Clock, title: t('services.onDemand.title'), description: t('services.onDemand.description'), image: serviceDemandeImg },
     ];
 
     return (
@@ -61,6 +37,7 @@ const Services = () => {
                         return (
                             <div
                                 key={service.id}
+                                id={`service-${service.slug}`}
                                 className="service-card"
                                 data-aos="fade-up"
                                 data-aos-delay={index * 100}
@@ -71,6 +48,8 @@ const Services = () => {
                                         src={service.image}
                                         alt={service.title ? `${service.title} - EM Taxi Touristique - Transport premium au Maroc` : 'EM Taxi Touristique - Service de transport premium au Maroc'}
                                         loading="lazy"
+                                        width="800"
+                                        height="600"
                                     />
                                     <div className="service-card-overlay"></div>
                                 </div>

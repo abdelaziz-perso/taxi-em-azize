@@ -64,7 +64,8 @@ const About = () => {
 
                         <div className="about-description">
                             <p>
-                                {t('about.excellence.description')}
+                                {t('about.excellence.description')}{' '}
+                                <a href="#contact">{t('about.excellence.reserveLink')}</a>
                             </p>
                         </div>
 
@@ -100,6 +101,8 @@ const About = () => {
                             src={driverImg} 
                             alt="Chauffeur professionnel EM Taxi Touristique - Transport premium au Maroc depuis 2009" 
                             loading="lazy"
+                            width="600"
+                            height="400"
                         />
                         <div className="about-badge" aria-label={`15+ ${t('about.excellence.badge')}`}>
                             <div className="about-badge-value">15+</div>

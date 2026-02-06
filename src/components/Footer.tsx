@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import logo from '../assets/logo.png';
 import paypalLogo from '../assets/paypal.png';
@@ -17,12 +17,12 @@ const Footer = () => {
         { name: t('navbar.contact'), href: '#contact' },
     ];
 
-    const services = [
-        t('services.airport.title'),
-        t('services.business.title'),
-        t('services.events.title'),
-        t('services.onDemand.title'),
-        t('services.privateDriver'),
+    const serviceLinks = [
+        { name: t('services.airport.title'), href: '#service-airport' },
+        { name: t('services.business.title'), href: '#service-business' },
+        { name: t('services.events.title'), href: '#service-events' },
+        { name: t('services.onDemand.title'), href: '#service-ondemand' },
+        { name: t('services.privateDriver'), href: '#services' },
     ];
 
     const contactInfo = [
@@ -56,6 +56,15 @@ const Footer = () => {
         { icon: Linkedin, href: '#', label: 'LinkedIn' },
     ];
 
+    const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://em-taxi.com/';
+    const shareText = 'EM Taxi - Chauffeur Privé & Transport Premium Maroc';
+    const shareLinks = [
+        { icon: Twitter, href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`, label: 'Twitter' },
+        { icon: Facebook, href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, label: 'Facebook' },
+        { icon: Linkedin, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, label: 'LinkedIn' },
+        { icon: MessageCircle, href: `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`, label: 'WhatsApp' },
+    ];
+
     return (
         <footer className="footer">
             <div className="footer-content">
@@ -63,7 +72,7 @@ const Footer = () => {
                 <div className="footer-main">
                     {/* Company Info */}
                     <div className="footer-column footer-about">
-                        <img src={logo} alt="EM Taxi Touristique - Logo - Transport Premium au Maroc" className="footer-logo" />
+                        <img src={logo} alt="EM Taxi Touristique - Logo - Transport Premium au Maroc" className="footer-logo" width="140" height="70" loading="lazy" />
                         <h3 className="footer-company-name">EM Taxi Touristique</h3>
                         <p className="footer-description">
                             {t('footer.description')}
@@ -103,9 +112,9 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4 className="footer-column-title">{t('footer.ourServices')}</h4>
                         <ul className="footer-links">
-                            {services.map((service) => (
-                                <li key={service}>
-                                    <span>{service}</span>
+                            {serviceLinks.map((service) => (
+                                <li key={service.name}>
+                                    <a href={service.href}>{service.name}</a>
                                 </li>
                             ))}
                         </ul>
@@ -139,6 +148,28 @@ const Footer = () => {
                     </div>
                 </div>
 
+                {/* Share this page */}
+                <div className="footer-share">
+                    <h4 className="footer-share-title">{t('footer.share')}</h4>
+                    <div className="footer-share-buttons">
+                        {shareLinks.map((item) => {
+                            const IconComponent = item.icon;
+                            return (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    className="footer-share-btn"
+                                    aria-label={item.label === 'Twitter' ? t('footer.shareTwitter') : item.label === 'Facebook' ? t('footer.shareFacebook') : item.label === 'LinkedIn' ? t('footer.shareLinkedIn') : t('footer.shareWhatsApp')}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <IconComponent size={20} />
+                                </a>
+                            );
+                        })}
+                    </div>
+                </div>
+
                 {/* Payment Methods */}
                 <div className="footer-payment">
                     <h4 className="footer-payment-title">{t('footer.paymentMethods')}</h4>
@@ -158,13 +189,13 @@ const Footer = () => {
                         </div>
                         <div className="footer-payment-item" title="PayPal">
                             <div className="payment-icon no-bg">
-                                <img src={paypalLogo} alt="Paiement sécurisé PayPal - EM Taxi Touristique" className="payment-img" />
+                                <img src={paypalLogo} alt="Paiement sécurisé PayPal - EM Taxi Touristique" className="payment-img" width="80" height="32" loading="lazy" />
                             </div>
                             <span>PayPal</span>
                         </div>
                         <div className="footer-payment-item" title="Payoneer">
                             <div className="payment-icon no-bg">
-                                <img src={payoneerLogo} alt="Paiement Payoneer - EM Taxi Touristique" className="payment-img" />
+                                <img src={payoneerLogo} alt="Paiement Payoneer - EM Taxi Touristique" className="payment-img" width="80" height="32" loading="lazy" />
                             </div>
                             <span>Payoneer</span>
                         </div>
