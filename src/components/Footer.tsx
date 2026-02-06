@@ -158,13 +158,13 @@ const Footer = () => {
                         </div>
                         <div className="footer-payment-item" title="PayPal">
                             <div className="payment-icon no-bg">
-                                <img src={paypalLogo} alt="PayPal" className="payment-img" />
+                                <img src={paypalLogo} alt="Paiement sécurisé PayPal - EM Taxi Touristique" className="payment-img" />
                             </div>
                             <span>PayPal</span>
                         </div>
                         <div className="footer-payment-item" title="Payoneer">
                             <div className="payment-icon no-bg">
-                                <img src={payoneerLogo} alt="Payoneer" className="payment-img" />
+                                <img src={payoneerLogo} alt="Paiement Payoneer - EM Taxi Touristique" className="payment-img" />
                             </div>
                             <span>Payoneer</span>
                         </div>

@@ -67,9 +67,9 @@ const Services = () => {
                             >
                                 {/* Background Image */}
                                 <div className="service-card-bg">
-                                    <img 
-                                        src={service.image} 
-                                        alt={`${service.title} - EM Taxi Touristique - ${t('services.subtitle')}`}
+                                    <img
+                                        src={service.image}
+                                        alt={service.title ? `${service.title} - EM Taxi Touristique - Transport premium au Maroc` : 'EM Taxi Touristique - Service de transport premium au Maroc'}
                                         loading="lazy"
                                     />
                                     <div className="service-card-overlay"></div>

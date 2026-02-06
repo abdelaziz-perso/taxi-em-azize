@@ -28,18 +28,18 @@ const SEO = () => {
         // SEO content based on language
         const seoContent = {
             fr: {
-                title: 'EM Taxi Touristique - Transport Premium & Chauffeur Privé au Maroc | Depuis 2009',
-                description: 'EM Taxi Touristique offre des services de transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, transport d\'affaires et événements. Mercedes S-Class, BMW. Service 24/7.',
+                title: 'EM Taxi - Chauffeur Privé & Transport Premium Maroc',
+                description: 'EM Taxi Touristique : transport de luxe au Maroc depuis 2009. Chauffeur privé, transferts aéroport, affaires et événements. Mercedes, BMW. 24/7. Réservation.',
                 keywords: 'taxi maroc, chauffeur privé maroc, transport de luxe maroc, transfert aéroport maroc, taxi touristique maroc, mercedes chauffeur maroc, transport premium maroc, EM Taxi Touristique',
             },
             en: {
-                title: 'EM Taxi Touristique - Premium Transportation & Private Chauffeur in Morocco | Since 2009',
-                description: 'EM Taxi Touristique offers luxury transportation services in Morocco since 2009. Private chauffeur, airport transfers, business transportation and events. Mercedes S-Class, BMW. 24/7 service.',
+                title: 'EM Taxi - Private Chauffeur & Premium Transport Morocco',
+                description: 'EM Taxi Touristique offers luxury transportation in Morocco since 2009. Private chauffeur, airport transfers, business and events. Mercedes S-Class, BMW. 24/7 service. Easy booking.',
                 keywords: 'taxi morocco, private chauffeur morocco, luxury transport morocco, airport transfer morocco, tourist taxi morocco, mercedes chauffeur morocco, premium transport morocco, EM Taxi Touristique',
             },
             ar: {
-                title: 'EM تاكسي توريستيك - النقل الفاخر وسائق خاص في المغرب | منذ 2009',
-                description: 'EM تاكسي توريستيك تقدم خدمات النقل الفاخر في المغرب منذ 2009. سائق خاص، نقل المطار، نقل الأعمال والفعاليات. مرسيدس S-Class، BMW. خدمة 24/7.',
+                title: 'EM تاكسي توريستيك - سائق خاص ونقل فاخر المغرب',
+                description: 'EM تاكسي توريستيك تقدم خدمات النقل الفاخر في المغرب منذ 2009. سائق خاص، نقل المطار، نقل الأعمال والفعاليات. مرسيدس S-Class، BMW. خدمة 24/7. حجز سهل.',
                 keywords: 'تاكسي المغرب, سائق خاص المغرب, نقل فاخر المغرب, نقل المطار المغرب, تاكسي سياحي المغرب, مرسيدس سائق المغرب, نقل ممتاز المغرب, EM تاكسي توريستيك',
             },
         };

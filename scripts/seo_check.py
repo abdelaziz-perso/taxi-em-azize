@@ -126,6 +126,9 @@ def check_source_images(root: Path):
                 else:
                     alt_m = re.search(r'alt=["\']([^"\']*)["\']', attrs)
                     alt_val = alt_m.group(1) if alt_m else ""
+                    # JSX dynamic alt: alt={expression} has no quoted value to extract
+                    if not alt_m and "alt={" in attrs:
+                        continue  # assume descriptive alt from expression
                     if not alt_val.strip():
                         warnings.append(f"{path.relative_to(root)}: <img> has empty alt")
                     elif len(alt_val) < 10:
