@@ -11,9 +11,9 @@ const Footer = () => {
 
     const quickLinks = [
         { name: t('navbar.home'), href: '#accueil' },
+        { name: t('navbar.about'), href: '#apropos' },
         { name: t('navbar.services'), href: '#services' },
         { name: t('navbar.pricing'), href: '#tarifs' },
-        { name: t('navbar.about'), href: '#apropos' },
         { name: t('navbar.contact'), href: '#contact' },
     ];
 
@@ -220,21 +220,13 @@ const Footer = () => {
                         <p className="footer-developer-text">
                             {t('footer.developedBy')}{' '}
                             <a
-                                href="https://www.linkedin.com/in/abdelaziz-elhathout-191290208/"
+                                href="https://wa.me/212630258502?text=slt%20jai%20besoin%20de%20site%20web%20pour"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="footer-developer-link"
+                                aria-label="Contacter Abdelaziz & Hamza sur WhatsApp"
                             >
-                                Abdelaziz
-                            </a>
-                            {' '}&{' '}
-                            <a
-                                href="https://www.linkedin.com/in/hamza-dbani/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="footer-developer-link"
-                            >
-                                Hamza
+                                Abdelaziz & Hamza
                             </a>
                         </p>
                     </div>

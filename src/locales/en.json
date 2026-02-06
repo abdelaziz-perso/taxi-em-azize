@@ -83,6 +83,17 @@
   },
   "about": {
     "label": "ABOUT US",
+    "seo": {
+      "brief": "EM Taxi is your private chauffeur and premium transport partner in Morocco since 2009. Airport transfers, business, events — Mercedes and BMW fleet, 24/7.",
+      "showMore": "Show more details",
+      "showLess": "Show less",
+      "p1": "EM Taxi is your private chauffeur and premium transport partner in Morocco. Since 2009, EM Taxi Touristique has been offering luxury transport in Casablanca, Marrakech, Rabat and across Morocco.",
+      "p2": "Book a private chauffeur for airport transfers, business travel, events and special occasions. Our Mercedes and BMW fleet provides comfortable, punctual premium transport, available 24/7.",
+      "p3": "Services: airport transfers with flight tracking, professional and corporate transport, chauffeur for events and weddings, on-demand service for tourist visits. Transparent pricing and Standard, Business and Premium packages.",
+      "p4": "EM Taxi - Private Chauffeur & Premium Transport Morocco: experienced drivers, high-end vehicles and a commitment to quality for all your travel in Morocco. Easy booking by phone or online form.",
+      "p5": "Whether you travel for business or leisure, choosing EM Taxi means reliability, comfort and professionalism. Contact us to book your private chauffeur or get a personalised quote for premium transport in Morocco.",
+      "p6": "Book by phone on 06 72 72 87 06 or via the contact form. EM Taxi - Private Chauffeur & Premium Transport Morocco: your reference for luxury transport in Casablanca, Marrakech, Rabat, Fès and Moroccan airports."
+    },
     "title": "Your Trusted Partner",
     "titleHighlight": "in Premium Transportation",
     "subtitle": "Since 2009, EM Taxi Touristique has been offering luxury transportation services in Morocco, combining excellence, punctuality and comfort.",

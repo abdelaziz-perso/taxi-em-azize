@@ -83,6 +83,17 @@
   },
   "about": {
     "label": "À PROPOS DE NOUS",
+    "seo": {
+      "brief": "EM Taxi est votre partenaire chauffeur privé et transport premium au Maroc depuis 2009. Transferts aéroport, affaires, événements — flotte Mercedes et BMW, 24h/24.",
+      "showMore": "Voir plus de détails",
+      "showLess": "Voir moins",
+      "p1": "EM Taxi est votre partenaire chauffeur privé et transport premium au Maroc. Depuis 2009, EM Taxi Touristique propose un service de transport de luxe à Casablanca, Marrakech, Rabat et dans tout le Maroc.",
+      "p2": "Réservez un chauffeur privé pour vos transferts aéroport, déplacements professionnels, événements et occasions spéciales. Notre flotte Mercedes et BMW assure un transport premium confortable et ponctuel, disponible 24h/24 et 7j/7.",
+      "p3": "Services proposés : transferts aéroport avec suivi de vol, transport professionnel et entreprise, chauffeur pour événements et mariages, service à la demande pour visites touristiques. Tarifs transparents et formules Standard, Affaires et Premium.",
+      "p4": "EM Taxi - Chauffeur Privé & Transport Premium Maroc : une équipe de chauffeurs expérimentés, des véhicules haut de gamme et un engagement qualité pour tous vos déplacements au Maroc. Réservation simple par téléphone ou formulaire en ligne.",
+      "p5": "Que vous voyagiez pour affaires ou pour le tourisme, choisir EM Taxi c'est opter pour la fiabilité, le confort et le professionnalisme. Contactez-nous pour réserver votre chauffeur privé ou obtenir un devis personnalisé pour votre transport premium au Maroc.",
+      "p6": "Réservation par téléphone au 06 72 72 87 06 ou via le formulaire de contact. EM Taxi - Chauffeur Privé & Transport Premium Maroc : votre référence pour le transport de luxe à Casablanca, Marrakech, Rabat, Fès et aéroports du Maroc."
+    },
     "title": "Votre Partenaire de Confiance",
     "titleHighlight": "en Transport Premium",
     "subtitle": "Depuis 2009, EM Taxi Touristique offre des services de transport de luxe au Maroc, alliant excellence, ponctualité et confort.",

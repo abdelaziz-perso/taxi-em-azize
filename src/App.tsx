@@ -33,9 +33,9 @@ function App() {
         <WelcomeAssistant />
         <Navbar />
         <Hero />
+        <About />
         <Services />
         <Pricing />
-        <About />
         <Contact />
         <Footer />
       </div>

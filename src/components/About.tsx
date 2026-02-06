@@ -1,10 +1,12 @@
-import { Car, Users, Award, Shield } from 'lucide-react';
+import { useState } from 'react';
+import { Car, Users, Award, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import driverImg from '../assets/driver.jpg';
 import './About.css';
 
 const About = () => {
     const { t } = useLanguage();
+    const [seoExpanded, setSeoExpanded] = useState(false);
     
     const features = [
         {
@@ -51,16 +53,60 @@ const About = () => {
     return (
         <section className="about" id="apropos" aria-label="À propos de EM Taxi Touristique">
             <div className="about-container">
-                {/* Section Label */}
-                <p className="about-label">{t('about.label')}</p>
+                {/* Section Header (centered, like Services / Pricing) */}
+                <header className="about-header">
+                    <p className="about-label">{t('about.label')}</p>
+                    <h2 className="about-header-title">
+                        {t('about.title')} <span className="highlight">{t('about.titleHighlight')}</span>
+                    </h2>
+                    <p className="about-subtitle">{t('about.subtitle')}</p>
+                </header>
+
+                {/* SEO intro: brief by default, expand for full details */}
+                <div className="about-seo">
+                    <p className="about-seo-brief">{t('about.seo.brief')}</p>
+                    {!seoExpanded ? (
+                        <button
+                            type="button"
+                            className="about-seo-toggle"
+                            onClick={() => setSeoExpanded(true)}
+                            aria-expanded={false}
+                            aria-label={t('about.seo.showMore')}
+                        >
+                            {t('about.seo.showMore')}
+                            <ChevronDown size={18} />
+                        </button>
+                    ) : (
+                        <>
+                            <div className="about-seo-details">
+                                <p>{t('about.seo.p1')}</p>
+                                <p>{t('about.seo.p2')}</p>
+                                <p>{t('about.seo.p3')}</p>
+                                <p>{t('about.seo.p4')}</p>
+                                <p>{t('about.seo.p5')}</p>
+                                <p>{t('about.seo.p6')}</p>
+                            </div>
+                            <button
+                                type="button"
+                                className="about-seo-toggle"
+                                onClick={() => setSeoExpanded(false)}
+                                aria-expanded={true}
+                                aria-label={t('about.seo.showLess')}
+                            >
+                                {t('about.seo.showLess')}
+                                <ChevronUp size={18} />
+                            </button>
+                        </>
+                    )}
+                </div>
 
                 {/* Main Content Grid */}
                 <div className="about-content">
                     {/* Left Side - Text Content */}
                     <div className="about-text">
-                        <h2 className="about-title">
+                        <h3 className="about-title">
                             {t('about.excellence.title')} <span className="highlight">{t('about.excellence.titleHighlight')}</span>
-                        </h2>
+                        </h3>
 
                         <div className="about-description">
                             <p>

@@ -11,15 +11,84 @@
     padding: 0 2rem;
 }
 
-/* Section Label */
+/* Section Header (centered, like Services / Pricing) */
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
 .about-label {
     color: var(--color-primary);
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: inline-block;
+}
+
+.about-header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-header-title .highlight {
+    color: var(--color-primary);
+}
+
+.about-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* SEO intro: brief by default, expand for details */
+.about-seo {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    line-height: 1.65;
+}
+
+.about-seo-brief {
+    margin-bottom: 1rem;
+}
+
+.about-seo-details {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.about-seo-details p {
+    margin-bottom: 0.75rem;
+}
+.about-seo-details p:last-child {
+    margin-bottom: 0;
+}
+
+.about-seo-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.about-seo-toggle:hover {
+    background: var(--color-primary);
+    color: #fff;
 }
 
 /* Main Content Grid */
@@ -36,8 +105,9 @@
     animation: fadeInLeft 1s ease;
 }
 
+/* Inner heading (Excellence) inside content grid */
 .about-title {
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--color-dark);
     margin-bottom: 1.5rem;
@@ -380,8 +450,12 @@
         padding: 4rem 0;
     }
 
-    .about-title {
+    .about-header-title {
         font-size: 2.25rem;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
     }
 
     .about-image img {
@@ -416,8 +490,12 @@
         padding: 0 1rem;
     }
 
-    .about-title {
+    .about-header-title {
         font-size: 1.85rem;
+    }
+
+    .about-title {
+        font-size: 1.35rem;
     }
 
     .about-description p {
@@ -471,6 +549,10 @@
 
     .about-stat-value {
         font-size: 2rem;
+    }
+
+    .about-subtitle {
+        font-size: 1rem;
     }
 
     .about-why-title {

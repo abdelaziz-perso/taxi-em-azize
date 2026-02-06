@@ -64,9 +64,9 @@ const Navbar = () => {
 
     const navLinks = [
         { name: t('navbar.home'), href: '#accueil' },
+        { name: t('navbar.about'), href: '#apropos' },
         { name: t('navbar.services'), href: '#services' },
         { name: t('navbar.pricing'), href: '#tarifs' },
-        { name: t('navbar.about'), href: '#apropos' },
     ];
 
     const languages = [

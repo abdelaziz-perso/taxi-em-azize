@@ -47,22 +47,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Crawlable intro content (250+ words, H1 keywords) - visible for SEO */
-.seo-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  font-size: 0.9rem;
-  color: var(--color-gray);
-  line-height: 1.65;
-}
-.seo-content p {
-  margin-bottom: 0.75rem;
-}
-.seo-content p:last-child {
-  margin-bottom: 0;
-}
-
 /* Visually hidden H1 for crawlers (SPA) - present in initial HTML */
 .sr-only {
   position: absolute;
